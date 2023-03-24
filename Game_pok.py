@@ -1,13 +1,14 @@
 import random
 
 class Pokemon:
-    def __init__(self, name, lv, tipo, Hp, Atk, Def,):
+    def __init__(self, name, lv, tipo, Hp, Atk, Def, Speed):
         self.name = name
         self.lv = lv
         self.tipo = tipo
         self.Hp = Hp
         self.Atk = Atk
         self.Def = Def
+        self.Speed = Speed
 
     def Battle(self, oponente):
         print(f"IN BATTLE {self.name} VS {oponente.name}")
@@ -15,8 +16,11 @@ class Pokemon:
         vantagem = 1
         
         while True:
-            input("Press Enter to continue.")
-
+            x = input("Press Enter to continue or 0 to run.")
+            if x == " ":
+                pass
+            elif x == "0":
+                break
             print(f"ROUND {contador}")
             contador += 1
             
@@ -64,14 +68,14 @@ class Pokemon:
                 break
 
 class Charizard(Pokemon):
-    def __init__(self, name, lv, tipo, Hp, Atk, Def):
-        super().__init__(name, lv, tipo, Hp, Atk, Def)
+    def __init__(self, name, lv, tipo, Hp, Atk, Def, Speed):
+        super().__init__(name, lv, tipo, Hp, Atk, Def, Speed)
 class Blastoise(Pokemon):
-    def __init__(self, name, lv, tipo, Hp, Atk, Def):
-        super().__init__(name, lv, tipo, Hp, Atk, Def)
+    def __init__(self, name, lv, tipo, Hp, Atk, Def, Speed):
+        super().__init__(name, lv, tipo, Hp, Atk, Def, Speed)
 class Venussaur(Pokemon):
-    def __init__(self, name, lv, tipo, Hp, Atk, Def):
-        super().__init__(name, lv, tipo, Hp, Atk, Def)
+    def __init__(self, name, lv, tipo, Hp, Atk, Def, Speed):
+        super().__init__(name, lv, tipo, Hp, Atk, Def, Speed)
          
 
 pokemon1 = Charizard("Charizard",100, "fogo", 250, 150, 60)
