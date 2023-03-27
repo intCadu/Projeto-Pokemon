@@ -6,7 +6,7 @@ class Player:
         
     
     def get_information(self):
-        return player1.__dict__
+        return (f"GENDER: {jogador}, NAME: {nome_jogador}, AGE: {idade_jogador}")
     
     def set_name(self, new_name):
         self.name = new_name
@@ -20,6 +20,7 @@ nome_jogador = ""
 Game = True
 while Game:
     
+    
     print("Press B(BOY) or G(GIRL)!")
     ask_Tipo = input("Chose your Gender:")   
     if ask_Tipo.upper() == "B":
@@ -30,24 +31,47 @@ while Game:
         pass
     else:
         print("INVALID ANSWER!!!")
+        print("TRY AGAIN!!")
         break
-    age_jogador = input("What's your age?")    
+    age_jogador = int(input("What's your age?"))
+    if age_jogador:
+        if age_jogador < 100:
+            idade_jogador = age_jogador
+            pass
+        elif age_jogador > 100:
+            print("INVALID AGE!!")
+            print("TRY AGAIN!!")
+            break
+        else:
+            break
+    else:
+        print("INVALID ANSWER!!!")
+        print("TRY AGAIN!!")
+        break
+
     nome_jogador = input("What's the player name?")
     nome_confirmacao = input(f"Your name is {nome_jogador}?(Y/N)")
     if nome_confirmacao.upper() == "Y":
-        player1 = Player(jogador,nome_jogador,age_jogador)
+        player1 = Player(jogador,nome_jogador,idade_jogador)
         x = input("You want to see your informations?(Y/N)")
         if x.upper() == "Y":
             print(player1.get_information())
+            Game = False
         else:
-            pass
-    # Precisa melhorar a logica da Função set_name
+            Game = False
+        # Precisa melhorar a logica da Função set_name
     elif nome_confirmacao.upper() == "N":
-        nome_jogador = input("What's your name:")
-        player1.set_name(nome_jogador)
-
+        new_nome_jogador = input("What's your name:")
+        player1.set_name(new_nome_jogador)
+        x = input("You want to see your informations?(Y/N)")
+        if x.upper() == "Y":
+            print(player1.get_information())
+            Game = False
+        else:
+            Game = False
     else: 
         ("INVALID ANSWER!!!")
+        break
     
     partner = True
     while partner:
@@ -64,7 +88,7 @@ while Game:
                 pass
             elif path1.upper() == "Y":
                 print("You are in laboratory...")
-                x = input("Press enter to speak with Prf. Oak...")
+                x = input("Press enter to speak with Prf. Tarik...")
                 print(f"Oh! Hello {player1.name}, i was here studing Pokemons...")
                 x = input("Press enter...")
                 print("And i have a dicover, there are many Pokemons in the world...")
@@ -189,7 +213,118 @@ while Game:
                 print("INVALID ANSWER!")
                 pass
 
+    
+    print(f'''-- BACK IN HOUSE --
+{player1.name} WAS GETTING READY TO JOURNEY...''')
+    print("MOM: Hey honey, i hear that you recieve your first Pokemon!!")
+    x = input("Press enter...")
+    print("MOM: That's great, your dad will be proud of you!!")
+    x = input("Press enter...")
+    print("MOM: You know, he's the gym leader of Fortal City...")
+    x = input("Press enter...")
+    print("MOM: But despite that, he always dreamed of seeing you become a Pokemon Trainer!")
+    x = input("Press enter...")
+    print("MOM: Hurry up, take your things, don't forget anything...")
+    x = input("Press enter...")
+    print("MOM: Your journey start now, go ahead!")
+    x = input("Press enter...")
+    print("-- GOING OUT SIDE --")
+    start_journey = True
+    while start_journey:
 
+        print('''CHOSE YOUR PATH!!
+        1 -- GO TO HOUSE 085
+        2 -- TALK WITH MAYOR
+        3 -- GO TO ROUTE 222
+        ''')
+        start_route = input("Chose your path 1, 2 or 3:")
+        if start_route == "1":
+            x = input("You really want go to house 085?(Y/N)")
+            if x.upper() == "N":
+                print("Oskey?!")
+                pass
+            elif x.upper() == "Y":
+                print("-- INSIDE HOUSE 085 --")
+                print(f"Mrs. Teller: Oh, hi {player1.name}!")
+                x = input("Press enter...")
+                print("Mrs. Teller: What a surprise, i was thinking when you would come see me...")
+                x = input("Press enter...")
+                print("Mrs. Teller: My daughter Penny are up stairs, go there!")
+                x = input("Press enter...")
+                print("-- GOING UP --")
+                x = input("Press enter...")
+                print("PENNY: I need to hurry up, i'm late to see Prf. Tarik")
+                x = input("Press enter...")
+                print("PENNY: Oh hi, i don't see you there...")
+                x = input("Press enter...")
+                print(f"PENNY: You must be the {player1.name}, i heard about you!")
+                x = input("Press enter...")
+                print("PENNY: Whatever, i need to go. Get out of my way!")
+                x = input("Press enter...")
+                pass
+            else:
+                pass
+        elif start_route == "2":
+            x = input("You really want talk with Mayor?(Y/N)")
+            if x.upper() == "N":
+                print("Oskey?!")
+                pass
+            elif x.upper() == "Y":
+                print("-- INSIDE CITY HALL -- ")
+                print("MAYOR VALIM: Work, work, work!")
+                x = input("Press enter...")
+                print(f"MAYOR VALIM: Hello {player1.name}, you know Caucaia City is the best city in Ceará?")
+                x = input("Press enter...")
+                print("MAYOR VALIM: Well, soon you will see more and more stuff here. Just wait...")
+                x = input("Press enter...")
+                print("MAYOR VALIM: Work, work, work!")
+                x = input("Press enter...")
+                pass
+            else:
+                pass
+        elif start_route == "3":
+            x = input("You really want go to ROUTE 222?(Y/N)")
+            if x.upper() == "N":
+                print("Oskey?!")
+                pass
+            elif x.upper() == "Y":
+                print("-- IN ROUTE 222 --")
+                x = input("Press enter...")
+                print("YOU: I think this is the start of my journey...")
+                x = input("Press enter...")
+                print("YOU: What? What are these bushes for?")
+                x = input("Press enter...")
+                print("-- A TRAVELER SPEAKS --")
+                print("Taveler: Hello young trainer!")
+                x = input("Press enter...")
+                print("Traveler: I was walking around and i heard you...")
+                x = input("Press enter...")
+                print("Traveler: In this bushes you can found some wild Pokemons... ")
+                x = input("Press enter...")
+                print("Traveler: But to capture one of them you will need have a Pokeball...")
+                x = input("Press enter...")
+                print('''Traveler: The Pokeball is a device,
+that allows you to capture and store Pokemons inside it''')
+                x = input("Press enter...")
+                print("YOU: Oh, i understand, but i don't have any with me...")
+                x = input("Press enter...")
+                print("Traveler: Really? So in this case i can give some Pokeballs to you...")
+                x = input("Press enter...")
+                give_items = input("You want to take the Traveler's Pokeball?(Y/N)")
+                if give_items.upper() == "N":
+                    print("Traveler: Are you sure? Oskey?!")
+                elif give_items.upper() == "Y":
+                    print("Traveler: Greatful, take these Pokeball you will not regret it!")
+                    for i in range(1, 6):
+                        Bag_Items.append("Pokeball")
+                    print("-- YOU ADDED POKEBALLS ON YOUR BAG --")
+                    print("YOU: This Pokeballs will help me a lot!!")
+
+
+        else:
+            pass
+
+                
 
 
     
