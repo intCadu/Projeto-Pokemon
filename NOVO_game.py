@@ -1,3 +1,5 @@
+import random
+
 class Player:
     def __init__(self, gender, name, age):
         self.gender = gender
@@ -313,12 +315,206 @@ that allows you to capture and store Pokemons inside it''')
                 give_items = input("You want to take the Traveler's Pokeball?(Y/N)")
                 if give_items.upper() == "N":
                     print("Traveler: Are you sure? Oskey?!")
+                    pass
                 elif give_items.upper() == "Y":
                     print("Traveler: Greatful, take these Pokeball you will not regret it!")
                     for i in range(1, 6):
                         Bag_Items.append("Pokeball")
                     print("-- YOU ADDED POKEBALLS ON YOUR BAG --")
                     print("YOU: This Pokeballs will help me a lot!!")
+                    pass
+                route_bushes = True
+                while route_bushes:
+                    enter_bushes = input("Do you want enter in bushes?(Y/N)")
+                    if enter_bushes.upper() == "N":
+                        print("Oskey?!")
+                        route_bushes = False
+                    elif enter_bushes.upper() == "Y":
+                        on_bushes = True
+                        while on_bushes:
+                            print("-- CHOOSE THE BUSH --")
+                            print('''-- SELECT THE ACTION --
+1 -- BUSH 1
+2 -- BUSH 2
+3 -- BUSH 3
+4 -- BUSH 4
+9 -- TO EXIT THE BUSHES''')
+                            action_bushes = input("Selec your action:")
+                            if action_bushes == "1":
+                                print("Entering the bush...")
+                                x = input("Press enter...")
+                                pok_bush1 = ["Chamander","Bulbassaur", "Squirtle", "Caterpie", "Nothing here", "Nothing here", "Nothing here"]
+                                found = random.choice(pok_bush1)
+                                print(f"You found {found}!")
+                                if found == "Nothing here":
+                                    pass
+                                else: 
+                                    capture = input(f"Try to cath {found}?(Y/N)")
+                                    if capture.upper() == "N":
+                                        pass
+                                    elif capture.upper() == "Y":
+                                        catch = True
+                                        while catch:
+                                            count = Bag_Items.count("Pokeball")
+                                            if count >= 1:
+                                                trhow = input("You want to trhow a Pokeball?(Y/N)")
+                                                if trhow.upper() == "N":
+                                                    print("Oskey?!")
+                                                    catch = False
+                                                elif trhow.upper() == "Y":
+                                                    print(f"You have {count} Pokeballs!")
+                                                    print("Trhowing a Pokeball...")
+                                                    x = input("Press enter...")
+                                                    chance_catch = random.randint(1,101)
+                                                    if chance_catch < 55:
+                                                        print("The Pokeball failed...")
+                                                        Bag_Items.remove("Pokeball")
+                                                        pass
+                                                    elif chance_catch > 55:
+                                                        print(f"Gotcha!! The {found} was added on your list.")
+                                                        Bag_Pok.append(found)
+                                                        Bag_Items.remove("Pokeball")
+                                                        catch = False
+                                            else:
+                                                print("You don't have enough Pokeball...")
+                                                catch = False
+                            elif action_bushes == "2":
+                                print("Entering the bush...")
+                                x = input("Press enter...")
+                                pok_bush1 = ["Chamander","Bulbassaur", "Squirtle", "Caterpie", "Nothing here", "Nothing here", "Nothing here"]
+                                found = random.choice(pok_bush1)
+                                print(f"You found {found}!")
+                                if found == "Nothing here":
+                                    pass
+                                else: 
+                                    capture = input(f"Try to cath {found}?(Y/N)")
+                                    if capture.upper() == "N":
+                                        pass
+                                    elif capture.upper() == "Y":
+                                        catch = True
+                                        while catch:
+                                            count = Bag_Items.count("Pokeball")
+                                            if count >= 1:
+                                                trhow = input("You want to trhow a Pokeball?(Y/N)")
+                                                if trhow.upper() == "N":
+                                                    print("Oskey?!")
+                                                    catch = False
+                                                elif trhow.upper() == "Y":
+                                                    print(f"You have {count} Pokeballs!")
+                                                    print("Trhowing a Pokeball...")
+                                                    x = input("Press enter...")
+                                                    chance_catch = random.randint(1,101)
+                                                    if chance_catch < 55:
+                                                        print("The Pokeball failed...")
+                                                        Bag_Items.remove("Pokeball")
+                                                        pass
+                                                    elif chance_catch > 55:
+                                                        print(f"Gotcha!! The {found} was added on your list.")
+                                                        Bag_Pok.append(found)
+                                                        Bag_Items.remove("Pokeball")
+                                                        catch = False
+                                            else:
+                                                print("You don't have enough Pokeball...")
+                                                catch = False                            
+                            elif action_bushes == "3":
+                                print("Entering the bush...")
+                                x = input("Press enter...")
+                                pok_bush1 = ["Chamander","Bulbassaur", "Squirtle", "Caterpie", "Nothing here", "Nothing here", "Nothing here"]
+                                found = random.choice(pok_bush1)
+                                print(f"You found {found}!")
+                                if found == "Nothing here":
+                                    pass
+                                else: 
+                                    capture = input(f"Try to cath {found}?(Y/N)")
+                                    if capture.upper() == "N":
+                                        pass
+                                    elif capture.upper() == "Y":
+                                        catch = True
+                                        while catch:
+                                            count = Bag_Items.count("Pokeball")
+                                            if count >= 1:
+                                                trhow = input("You want to trhow a Pokeball?(Y/N)")
+                                                if trhow.upper() == "N":
+                                                    print("Oskey?!")
+                                                    catch = False
+                                                elif trhow.upper() == "Y":
+                                                    print(f"You have {count} Pokeballs!")
+                                                    print("Trhowing a Pokeball...")
+                                                    x = input("Press enter...")
+                                                    chance_catch = random.randint(1,101)
+                                                    if chance_catch < 55:
+                                                        print("The Pokeball failed...")
+                                                        Bag_Items.remove("Pokeball")
+                                                        pass
+                                                    elif chance_catch > 55:
+                                                        print(f"Gotcha!! The {found} was added on your list.")
+                                                        Bag_Pok.append(found)
+                                                        Bag_Items.remove("Pokeball")
+                                                        catch = False
+                                            else:
+                                                print("You don't have enough Pokeball...")
+                                                catch = False
+                            elif action_bushes == "4":
+                                print("Entering the bush...")
+                                x = input("Press enter...")
+                                pok_bush1 = ["Chamander","Bulbassaur", "Squirtle", "Caterpie", "Nothing here", "Nothing here", "Nothing here"]
+                                found = random.choice(pok_bush1)
+                                print(f"You found {found}!")
+                                if found == "Nothing here":
+                                    pass
+                                else: 
+                                    capture = input(f"Try to cath {found}?(Y/N)")
+                                    if capture.upper() == "N":
+                                        pass
+                                    elif capture.upper() == "Y":
+                                        catch = True
+                                        while catch:
+                                            count = Bag_Items.count("Pokeball")
+                                            if count >= 1:
+                                                trhow = input("You want to trhow a Pokeball?(Y/N)")
+                                                if trhow.upper() == "N":
+                                                    print("Oskey?!")
+                                                    catch = False
+                                                elif trhow.upper() == "Y":
+                                                    print(f"You have {count} Pokeballs!")
+                                                    print("Trhowing a Pokeball...")
+                                                    x = input("Press enter...")
+                                                    chance_catch = random.randint(1,101)
+                                                    if chance_catch < 55:
+                                                        print("The Pokeball failed...")
+                                                        Bag_Items.remove("Pokeball")
+                                                        pass
+                                                    elif chance_catch > 55:
+                                                        print(f"Gotcha!! The {found} was added on your list.")
+                                                        Bag_Pok.append(found)
+                                                        Bag_Items.remove("Pokeball")
+                                                        catch = False
+                                            else:
+                                                print("You don't have enough Pokeball...")
+                                                catch = False
+                            elif action_bushes == "9":
+                                cont_bush = input("You really want exit the bushes?(Y/N)")
+                                if cont_bush.upper() == "N":
+                                    print("Oskey?!")
+                                    pass
+                                elif cont_bush.upper() == "Y":
+                                    print("-- EXIT --")
+                                    x = input("Press enter...")
+                                    on_bushes = False
+                                    
+
+
+
+                                            
+
+
+
+
+                        
+                        
+                    else:
+                        print("INVALID OPTION")
+                        pass
 
 
         else:
