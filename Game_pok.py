@@ -78,9 +78,9 @@ class Venussaur(Pokemon):
         super().__init__(name, lv, tipo, Hp, Atk, Def, Speed)
          
 
-pokemon1 = Charizard("Charizard",100, "fogo", 250, 150, 60)
-pokemon2 = Blastoise("Blastoise",100,"agua", 300, 100, 85)
-pokemon3 = Venussaur("Venussaur",100,"planta", 450, 90, 75)
+pokemon1 = Charizard("Charizard",100, "fogo", 250, 150, 60, 50)
+pokemon2 = Blastoise("Blastoise",100,"agua", 300, 100, 85, 50)
+pokemon3 = Venussaur("Venussaur",100,"planta", 450, 90, 75, 50)
 
 lista_pokemon = [pokemon3, pokemon2 , pokemon3]
 
