@@ -1,217 +1,175 @@
 # Loja POKEBALL
+import random
+import Do_it
 Bag_Items = ["Potion","Potion","Potion","Pokeball","Pokeball","Greatball","Greatball","Ultraball","Ultraball","Ultraball","Ultraball","Ultraball","Ultraball","Ultraball"]
-
-Wallet = 1000
-
-sell_items = True
-while sell_items:
-    print('''-- SELLING --
-1 -- POTION........... R$50
-2 -- POKEBALL......... R$100 
-3 -- GREATBALL........ R$200
-4 -- ULTRABALL........ R$300
-9 -- EXIT ''')
-    see_items = input("Want to see your items?(Y/N)")
-    if see_items.upper() == "N":
-        print("Oskey?!")
+Bag_Pok = []
+Bag_pc = []
+on_boat = True
+while on_boat:
+    print("-- IN THE TABAPUA LAKE --")
+    print('''-- CHOOSE --
+1 -- USE THE SUPER ROD IN LEFT SIDE
+2 -- USE THE SUPER ROD IN RIGHT SIDE
+3 -- USE THE SUPER ROD ON THE BOAT'S PROW
+4 -- CAME BAKE TO HARBOR''')
+    do_boat = input("Select 1, 2, 3 or 4:")
+    if do_boat in ("1", "2", "3"):
+        print("Using Super Rod...")
         x = input("Press enter...")
-        pass
-    elif see_items.upper() == "Y":
-        contador1 = 0
-        contador2= 0
-        contador3 = 0
-        contador4 = 0        
-        for i in Bag_Items:
-            if i == "Potion":
-                contador1 += 1
-            elif i == "Pokeball":
-                contador2 += 1
-            elif i == "Greatball":
-                contador3 += 1
-            elif i == "Ultraball":
-                contador4 += 1
-        print(f"You have {contador1} Potion")
-        print(f"You have {contador2} Pokeball")
-        print(f"You have {contador3} Greatball")
-        print(f"You have {contador4} Ultraball")
-    else:
-        print("INVALID!")
-        x = input("Press enter...")
-        pass
-    start_sell = input("Select 1, 2, 3, 4, or 9:")
-    sell_quant = input("How many do you want to sell:")
-    if start_sell == "1":
-        contador_Potion = 0
-        if sell_quant.isnumeric() > 0:
-            for i in Bag_Items:
-                if i == "Potion":
-                    contador_Potion += 1
-            sell_conf = input("Do you really want to sell?(Y/N)")
-            if sell_conf.upper() == "Y":
-                if int(sell_quant) <= contador_Potion:
-                    for i in range(1, int(sell_quant) + 1):
-                        Bag_Items.remove("Potion")
-                        Wallet + 50
-                    total_potion = (int(sell_quant) * 50)
-                    print(f"Item sold! You received {total_potion} Cau coins on your wallet!")
-                    pass
-                elif int(sell_quant) > contador_Potion:
-                    print("You don't have enough Potions to sell!")
-                    x = input("Press enter...")
-                    pass
-                else:
-                    print("ERROR!")
-                    x = input("Press enter...")
-                    pass
-            elif sell_conf.upper() == "N":
+        find = (Do_it.found_lake())
+        if find != "Nothing here...":
+            ask_catch = input(f"Try catch {find}?(Y/N)")
+            if ask_catch.upper() == "N":
                 print("Oskey?!")
                 x = input("Press enter...")
                 pass
-            else:
-                print("ERROR!")
-                x = input("Press enter...")
-                pass
-        else:
-            print("ERROR!")
-            x = input("Press enter...")
-            pass
-    elif start_sell == "2":
-        contador_Pokeball = 0
-        if sell_quant.isnumeric() > 0:
-            for i in Bag_Items:
-                if i == "Pokeball":
-                    contador_Pokeball += 1
-            sell_conf = input("Do you really want to sell?(Y/N)")
-            if sell_conf.upper() == "Y":
-                if int(sell_quant) <= contador_Pokeball:
-                    for i in range(1, int(sell_quant) + 1):
-                        Bag_Items.remove("Pokeball")
-                        Wallet + 100
-                    total_potion = (int(sell_quant) * 100)
-                    print(f"Item sold! You received {total_potion} Cau coins on your wallet!")
-                    pass
-                elif int(sell_quant) > contador_Pokeball:
-                    print("You don't have enough Pokeball to sell!")
-                    x = input("Press enter...")
-                    pass
-                else:
-                    print("ERROR!")
-                    x = input("Press enter...")
-                    pass
-            elif sell_conf.upper() == "N":
-                print("Oskey?!")
-                x = input("Press enter...")
-                pass
-            else:
-                print("ERROR!")
-                x = input("Press enter...")
-                pass
-        else:
-            print("ERROR!")
-            x = input("Press enter...")
-            pass
-    elif start_sell == "3":
-        contador_Greatball = 0
-        if sell_quant.isnumeric() > 0:
-            for i in Bag_Items:
-                if i == "Greatball":
-                    contador_Greatball += 1
-            sell_conf = input("Do you really want to sell?(Y/N)")
-            if sell_conf.upper() == "Y":
-                if int(sell_quant) <= contador_Greatball:
-                    for i in range(1, int(sell_quant) + 1):
-                        Bag_Items.remove("Greatball")
-                        Wallet + 200
-                    total_potion = (int(sell_quant) * 200)
-                    print(f"Item sold! You received {total_potion} Cau coins on your wallet!")
-                    pass
-                elif int(sell_quant) > contador_Greatball:
-                    print("You don't have enough Greatball to sell!")
-                    x = input("Press enter...")
-                    pass
-                else:
-                    print("ERROR!")
-                    x = input("Press enter...")
-                    pass
-            elif sell_conf.upper() == "N":
-                print("Oskey?!")
-                x = input("Press enter...")
-                pass
-            else:
-                print("ERROR!")
-                x = input("Press enter...")
-                pass
-        else:
-            print("ERROR!")
-            x = input("Press enter...")
-            pass
-    elif start_sell == "4":
-        contador_Ultraball = 0
-        if sell_quant.isnumeric() > 0:
-            for i in Bag_Items:
-                if i == "Ultraball":
-                    contador_Ultraball += 1
-            sell_conf = input("Do you really want to sell?(Y/N)")
-            if sell_conf.upper() == "Y":
-                if int(sell_quant) <= contador_Ultraball:
-                    for i in range(1, int(sell_quant) + 1):
+            elif ask_catch.upper() == "Y":
+                trhow_ball = True
+                while trhow_ball:
+                    contador2 = 0
+                    contador3 = 0
+                    contador4 = 0        
+                    for i in Bag_Items:
+                        if i == "Pokeball":
+                            contador2 += 1
+                        elif i == "Greatball":
+                            contador3 += 1
+                        elif i == "Ultraball":
+                            contador4 += 1
+                    print(f"You have {contador2} Pokeball")
+                    print(f"You have {contador3} Greatball")
+                    print(f"You have {contador4} Ultraball")
+                    wich_ball = input("Wich ball you want to use?")
+                    if wich_ball.upper() == "POKEBALL":
+                        if contador2 > 0:
+                            print("Trhowing Pokeball...")
+                            Bag_Items.remove("Pokeball")
+                            x = input("Press enter...")
+                            chance_catch = random.randint(1,101)
+                            if chance_catch > 45:
+                                print("The Pokeball failed...")
+                                x = input("Press enter...")
+                                pass
+                            elif chance_catch <= 45:
+                                if len(Bag_Pok) >= 6:
+                                    print(f"Gotcha! {find} was captured and added on your Pc!")
+                                    Bag_pc.append(find)
+                                    trhow_ball = False
+                                elif len(Bag_Pok) <= 6:
+                                    print(f"Gotcha! {find} was captured and added on your team!")
+                                    Bag_Pok.append(find)
+                                    trhow_ball = False
+                                else:
+                                    print("INVALID!!")
+                                    x = input("Press enter...")
+                                    pass
+                            else:
+                                print("INVALID!!")
+                                x = input("Press enter...")
+                                pass
+                        elif contador2 == 0:
+                            print("You don't have enough Pokeballs!")
+                            x = input("Press enter...")
+                            pass
+                        else:
+                            print("INVALID!!")
+                            x = input("Press enter...")
+                            pass
+                    elif wich_ball.upper() == "GREATBALL":
+                        if contador3 > 0:
+                            print("Trhowing Greatball...")
+                            Bag_Items.remove("Greatball")
+                            x = input("Press enter...")
+                            chance_catch = random.randint(1,101)
+                            if chance_catch > 60:
+                                print("The Greatball failed...")
+                                x = input("Press enter...")
+                                pass
+                            elif chance_catch <= 60:
+                                if len(Bag_Pok) >= 6:
+                                    print(f"Gotcha! {find} was captured and added on your Pc!")
+                                    Bag_pc.append(find)
+                                    trhow_ball = False
+                                elif len(Bag_Pok) <= 6:
+                                    print(f"Gotcha! {find} was captured and added on your team!")
+                                    Bag_Pok.append(find)
+                                    trhow_ball = False
+                                else:
+                                    print("INVALID!!")
+                                    x = input("Press enter...")
+                                    pass
+                            else:
+                                print("INVALID!!")
+                                x = input("Press enter...")
+                                pass
+                        elif contador3 == 0:
+                            print("You don't have enough Pokeballs!")
+                            x = input("Press enter...")
+                            pass
+                        else:
+                            print("INVALID!!")
+                            x = input("Press enter...")
+                            pass
+                    elif wich_ball.upper() == "ULTRABALL":
+                        print("Trhowing Ultraball...")
                         Bag_Items.remove("Ultraball")
-                        Wallet + 300
-                    total_potion = (int(sell_quant) * 300)
-                    print(f"Item sold! You received {total_potion} Cau coins on your wallet!")
-                    pass
-                elif int(sell_quant) > contador_Ultraball:
-                    print("You don't have enough Ultraball to sell!")
-                    x = input("Press enter...")
-                    pass
-                else:
-                    print("ERROR!")
-                    x = input("Press enter...")
-                    pass
-            elif sell_conf.upper() == "N":
-                print("Oskey?!")
-                x = input("Press enter...")
-                pass
-            else:
-                print("ERROR!")
-                x = input("Press enter...")
-                pass
-        else:
-            print("ERROR!")
+                        x = input("Press enter...")
+                        chance_catch = random.randint(1,101)
+                        if chance_catch > 80:
+                            print("The Ultraball failed...")
+                            x = input("Press enter...")
+                            pass
+                        elif chance_catch <= 80:
+                            if len(Bag_Pok) >= 6:
+                                print(f"Gotcha! {find} was captured and added on your Pc!")
+                                Bag_pc.append(find)
+                                trhow_ball = False
+                            elif len(Bag_Pok) <= 6:
+                                print(f"Gotcha! {find} was captured and added on your team!")
+                                Bag_Pok.append(find)
+                                trhow_ball = False
+                            else:
+                                print("INVALID!!")
+                                x = input("Press enter...")
+                                pass
+                        else:
+                            print("INVALID!!")
+                            x = input("Press enter...")
+                            pass            
+        elif find == "Nothing here...":
+            print("You find nothing...")
             x = input("Press enter...")
             pass
-    elif start_sell == "9":
-        sell_exit = input("Do you really want to leave?(Y/N)")
-        if sell_exit.upper() == "N":
+        else:
+            print("INVALID!!")
+            x = input("Press enter...")
+            pass
+    elif do_boat == "4":
+        do_exit = input("Want to leave the boat?(Y/N)")
+        if do_exit.upper() == "N":
             print("Oskey?!")
             x = input("Press enter...")
             pass
-        elif sell_exit.upper() == "Y":
-            print("-- RETURNING --")
+        elif do_exit.upper() == "Y":
+            print("Leaving...")
             x = input("Press enter...")
-            sell_items = False
-        else:
-            print("ERROR!")
+            on_boat = False
+        else: 
+            print("INVALID!!")
             x = input("Press enter...")
             pass
-    else:
-        print("ERROR!")
-        x = input("Press enter...")
-        pass
-            
-            
-                
-                
-                
-               
-                    
+    else: 
+            print("INVALID!!")
+            x = input("Press enter...")
+            pass
     
-    
-    
-        
-
-            
-                
     
 
-   
+
+                                 
+
+
+
+
+
+
