@@ -134,7 +134,7 @@ while Game:
                                 case "1":
                                     x = input("You want Charmander to be your partner?(Y/N)")
                                     if x.upper() == "Y":
-                                        Bag_Pok.append(Van.poke004)
+                                        Bag_Pok.append(Van.Charmander)
                                         print("Charmander was added on your team")
                                         i = False
                                         partner = False
@@ -145,7 +145,7 @@ while Game:
                                 case "2":
                                     x = input("You want Squirtle to be your partner?(Y/N)")
                                     if x.upper() == "Y":
-                                        Bag_Pok.append(Van.poke007)
+                                        Bag_Pok.append(Van.Squirtle)
                                         print("Squirtle was added on your team")
                                         i = False
                                         partner = False
@@ -156,7 +156,7 @@ while Game:
                                 case "3":
                                     x = input("You want Bulbassaur to be your partner?(Y/N)")
                                     if x.upper() == "Y":
-                                        Bag_Pok.append(Van.poke001)
+                                        Bag_Pok.append(Van.Bulbassaur)
                                         print("Bulbassaur was added on your team")
                                         i = False
                                         partner = False
@@ -496,10 +496,9 @@ that allows you to capture and store Pokemons inside it''')
                             elif action_bushes == "4":
                                 print("Entering the bush...")
                                 x = input("Press enter...")
-                                pok_bush1 = ["Chamander","Bulbassaur", "Squirtle", "Caterpie", "Nothing here", "Nothing here", "Nothing here"]
-                                found = random.choice(pok_bush1)
-                                print(f"You found {found}!")
-                                if found == "Nothing here":
+                                found = (Function.found_bush())
+                                print(f"You found {found.get_name_pok()}!")
+                                if found == "Nothing here...":
                                     pass
                                 else: 
                                     capture = input(f"Try to cath {found}?(Y/N)")
@@ -561,7 +560,10 @@ that allows you to capture and store Pokemons inside it''')
                         x = input("Press enter...")
                         start_journey = False
                         route_bushes = False
+        
         else:
+            print("INVALID!!")
+            x = input("Press enter...")
             pass
     
     
@@ -773,17 +775,17 @@ that allows you to capture and store Pokemons inside it''')
                             while on_boat:
                                 print("-- IN THE TABAPUA LAKE --")
                                 print('''-- CHOOSE --
-                            1 -- USE THE SUPER ROD IN LEFT SIDE
-                            2 -- USE THE SUPER ROD IN RIGHT SIDE
-                            3 -- USE THE SUPER ROD ON THE BOAT'S PROW
-                            4 -- CAME BAKE TO HARBOR''')
+1 -- USE THE SUPER ROD IN LEFT SIDE
+2 -- USE THE SUPER ROD IN RIGHT SIDE
+3 -- USE THE SUPER ROD ON THE BOAT'S PROW
+4 -- CAME BAKE TO HARBOR''')
                                 do_boat = input("Select 1, 2, 3 or 4:")
                                 if do_boat in ("1", "2", "3"):
                                     print("Using Super Rod...")
                                     x = input("Press enter...")
                                     find = (Function.found_lake())
                                     if find != "Nothing here...":
-                                        ask_catch = input(f"Try catch {find}?(Y/N)")
+                                        ask_catch = input(f"Try catch {find.get_name_pok()}?(Y/N)")
                                         if ask_catch.upper() == "N":
                                             print("Oskey?!")
                                             x = input("Press enter...")
@@ -1506,6 +1508,8 @@ that allows you to capture and store Pokemons inside it''')
                     x = input("Press enter...")
                     print("-- IN BATTLE --")
                     x = input("Press enter...")
+                     
+
     
             elif "Battle Ticket" not in Bag_Items:
                 print("-- YOU CAN'T ENTER HERE --")

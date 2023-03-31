@@ -1,13 +1,169 @@
 import random
-import Van
+import Game_Main_Poke
+Bag_Pok = []
+Bag_pc = []
+lista_tier1 = Game_Main_Poke.lista_pokemon_t1
+lista_tier2 =  Game_Main_Poke.lista_pokemon_t2
+lista_tier3 =  Game_Main_Poke.lista_pokemon_t3
+poke_tier1_grama = []
+poke_tier1_agua = []
+poke_tier1_fogo = []
+poke_tier1_voador = []
+poke_tier1_lutador = []
+poke_tier1_psiquico = []
+poke_tier1_dragao = []
+poke_tier1_normal = []
+poke_tier1_eletrico = []
+poke_tier1_fantasma = []
+poke_tier1_fada = []
+poke_tier1_venenoso = []
+poke_tier1_terra = []
+poke_tier1_pedra = []
+poke_tier1_inseto = []
+poke_tier1_gelo = []
 
+poke_tier2_grama = []
+poke_tier2_agua = []
+poke_tier2_fogo = []
+poke_tier2_voador = []
+poke_tier2_lutador = []
+poke_tier2_psiquico = []
+poke_tier2_dragao = []
+poke_tier2_normal = []
+poke_tier2_eletrico = []
+poke_tier2_fantasma = []
+poke_tier2_fada = []
+poke_tier2_venenoso = []
+poke_tier2_terra = []
+poke_tier2_pedra = []
+poke_tier2_inseto = []
+poke_tier2_gelo = []
+
+poke_tier3_grama = []
+poke_tier3_agua = []
+poke_tier3_fogo = []
+poke_tier3_voador = []
+poke_tier3_lutador = []
+poke_tier3_psiquico = []
+poke_tier3_dragao = []
+poke_tier3_normal = []
+poke_tier3_eletrico = []
+poke_tier3_fantasma = []
+poke_tier3_fada = []
+poke_tier3_venenoso = []
+poke_tier3_terra = []
+poke_tier3_pedra = []
+poke_tier3_inseto = []
+poke_tier3_gelo = []
+
+for Pokemon in lista_tier1:
+    if Pokemon.elemento == "grama":
+        poke_tier1_grama.append(Pokemon)
+    if Pokemon.elemento == "agua":
+        poke_tier1_agua.append(Pokemon)
+    if Pokemon.elemento == "fogo":
+        poke_tier1_fogo.append(Pokemon)
+    if Pokemon.elemento == "voador":
+        poke_tier1_voador.append(Pokemon)
+    if Pokemon.elemento == "lutador":
+        poke_tier1_lutador.append(Pokemon)
+    if Pokemon.elemento == "psiquico":
+        poke_tier1_psiquico.append(Pokemon)
+    if Pokemon.elemento == "dragao":
+        poke_tier1_dragao.append(Pokemon)
+    if Pokemon.elemento == "normal":
+        poke_tier1_normal.append(Pokemon)
+    if Pokemon.elemento == "eletrico":
+        poke_tier1_eletrico.append(Pokemon)
+    if Pokemon.elemento == "fantasma":
+        poke_tier1_fantasma.append(Pokemon)
+    if Pokemon.elemento == "fada":
+        poke_tier1_fada.append(Pokemon)
+    if Pokemon.elemento == "venenoso":
+        poke_tier1_venenoso.append(Pokemon)
+    if Pokemon.elemento == "terra":
+        poke_tier1_terra.append(Pokemon)
+    if Pokemon.elemento == "pedra":
+        poke_tier1_pedra.append(Pokemon)
+    if Pokemon.elemento == "insecto":
+        poke_tier1_inseto.append(Pokemon)
+    if Pokemon.elemento == "gelo":
+        poke_tier1_gelo.append(Pokemon)
+
+for Pokemon in lista_tier2: 
+    if Pokemon.elemento == "grama":
+        poke_tier2_grama.append(Pokemon)
+    if Pokemon.elemento == "agua":
+        poke_tier2_agua.append(Pokemon)
+    if Pokemon.elemento == "fogo":
+        poke_tier2_fogo.append(Pokemon)
+    if Pokemon.elemento == "voador":
+        poke_tier2_voador.append(Pokemon)
+    if Pokemon.elemento == "lutador":
+        poke_tier2_lutador.append(Pokemon)
+    if Pokemon.elemento == "psiquico":
+        poke_tier2_psiquico.append(Pokemon)
+    if Pokemon.elemento == "dragao":
+        poke_tier2_dragao.append(Pokemon)
+    if Pokemon.elemento == "normal":
+        poke_tier2_normal.append(Pokemon)
+    if Pokemon.elemento == "eletrico":
+        poke_tier2_eletrico.append(Pokemon)
+    if Pokemon.elemento == "fantasma":
+        poke_tier2_fantasma.append(Pokemon)
+    if Pokemon.elemento == "fada":
+        poke_tier2_fada.append(Pokemon)
+    if Pokemon.elemento == "venenoso":
+        poke_tier2_venenoso.append(Pokemon)
+    if Pokemon.elemento == "terra":
+        poke_tier2_terra.append(Pokemon)
+    if Pokemon.elemento == "pedra":
+        poke_tier2_pedra.append(Pokemon)
+    if Pokemon.elemento == "insecto":
+        poke_tier2_inseto.append(Pokemon)
+    if Pokemon.elemento == "gelo":
+        poke_tier2_gelo.append(Pokemon)
+
+for Pokemon in lista_tier3:
+    if Pokemon.elemento == "grama":
+        poke_tier3_grama.append(Pokemon)
+    if Pokemon.elemento == "agua":
+        poke_tier3_agua.append(Pokemon)
+    if Pokemon.elemento == "fogo":
+        poke_tier3_fogo.append(Pokemon)
+    if Pokemon.elemento == "voador":
+        poke_tier3_voador.append(Pokemon)
+    if Pokemon.elemento == "lutador":
+        poke_tier3_lutador.append(Pokemon)
+    if Pokemon.elemento == "psiquico":
+        poke_tier3_psiquico.append(Pokemon)
+    if Pokemon.elemento == "dragao":
+        poke_tier3_dragao.append(Pokemon)
+    if Pokemon.elemento == "normal":
+        poke_tier3_normal.append(Pokemon)
+    if Pokemon.elemento == "eletrico":
+        poke_tier3_eletrico.append(Pokemon)
+    if Pokemon.elemento == "fantasma":
+        poke_tier3_fantasma.append(Pokemon)
+    if Pokemon.elemento == "fada":
+        poke_tier3_fada.append(Pokemon)
+    if Pokemon.elemento == "venenoso":
+        poke_tier3_venenoso.append(Pokemon)
+    if Pokemon.elemento == "terra":
+        poke_tier3_terra.append(Pokemon)
+    if Pokemon.elemento == "pedra":
+        poke_tier3_pedra.append(Pokemon)
+    if Pokemon.elemento == "insecto":
+        poke_tier3_inseto.append(Pokemon)
+    if Pokemon.elemento == "gelo":
+        poke_tier3_gelo.append(Pokemon)
+    
 
 def Pc_Pok(pokemon):
     if len(Bag_Pok) == 6:
         Bag_pc.append(pokemon)
     return Bag_pc 
-Bag_Pok = []
-Bag_pc = []
+
 def change_team(pokemon1, pokemon2):
 
     if pokemon1 in Bag_Pok:
@@ -15,71 +171,8 @@ def change_team(pokemon1, pokemon2):
     if pokemon2 in Bag_pc:
         Bag_pc.remove(pokemon2) and Bag_Pok.append(pokemon2)
 
-def Battle(self, oponente):
-        print("IN BATTLE",self.name," VS ",oponente.name)
-        contador = 1
-        self.vantagem = 1
-        oponente.vantagem = 1
-
-        self.vantagem = self.Check_Vantagem(oponente)
-
-        oponente.vantagem = oponente.Check_Vantagem(self)
-        
-        while True:
-            x = input("Press Enter to continue or 0 to run.")
-            if x == " ":
-                pass
-            elif x == "0":
-                break
-            print("""            ROUND""",contador)
-            contador += 1
-
-            if self.Speed > oponente.Speed:
-
-                dano = (self.Atk*self.vantagem) - oponente.Def
-                if dano > 0:
-                    oponente.Hp = oponente.Hp - dano
-                    print(self.name,"give",dano,"of damage in",oponente.name,"!")
-                    print("The",oponente.name,"Hp downs to",oponente.Hp,"!")
-                else: print("Damage of",self.name,"was null.")
-                if oponente.Hp <= 0:
-                    print(self.name,"WINS THE BATTLE. CONGRATULATIONS!!")
-                    break
-                
-                dano = (oponente.Atk*oponente.vantagem) - self.Def
-                if dano > 0:
-                    self.Hp = self.Hp - dano
-                    print(oponente.name,"give",dano,"of damage in ",self.name,"!")
-                    print("The",self.name,"Hp downs to",self.Hp,"!")
-                else: print("Damage of",oponente.name,"was null.")
-                if self.Hp <= 0:
-                    print("YOU LOOSE!",oponente.name,"WINS THE BATTLE!!")
-                    break
-
-            if oponente.Speed > self.Speed:
-
-                dano = (oponente.Atk*oponente.vantagem) - self.Def
-                if dano > 0:
-                    self.Hp = self.Hp - dano
-                    print(oponente.name,"give",dano,"of damage in ",self.name,"!")
-                    print("The",self.name,"Hp downs to",self.Hp,"!")
-                else: print("Damage of",oponente.name,"was null.")
-                if self.Hp <= 0:
-                    print("YOU LOOSE!",oponente.name,"WINS THE BATTLE!!")
-                    break
-
-                dano = (self.Atk*self.vantagem) - oponente.Def
-                if dano > 0:
-                    oponente.Hp = oponente.Hp - dano
-                    print(self.name,"give",dano,"of damage in",oponente.name,"!")
-                    print("The",oponente.name,"Hp downs to",oponente.Hp,"!")
-                else: print("Damage of",self.name,"was null.")
-                if oponente.Hp <= 0:
-                    print(self.name,"WINS THE BATTLE. CONGRATULATIONS!!")
-                    break
-
 def found_lake():
-    pok_lake = [Van.PokeAgua]
+    pok_lake = random.choice([poke_tier1_agua, poke_tier1_gelo])
     chance_found = random.randint(1, 101)
     if chance_found <= 25:
         nothing = "Nothing here..."
@@ -91,4 +184,20 @@ def found_lake():
         invalid = "INVALID!!"
         return invalid
 
+def found_bush():
+
+    pok_bush = random.choice([poke_tier1_eletrico,poke_tier1_fogo,poke_tier1_grama,poke_tier1_fantasma,poke_tier1_fada,poke_tier1_lutador,poke_tier1_normal,poke_tier1_pedra,poke_tier1_venenoso,poke_tier1_psiquico,poke_tier1_voador])
+    chance_found = random.randint(1, 101)
+    if chance_found <= 25:
+        nothing = "Nothing here..."
+        return nothing
+    elif chance_found > 25:
+        found_bush1 = random.choice(pok_bush)
+        return found_bush1
+    else:
+        invalid = "INVALID!!"
+        return invalid
+
+def name_pok(pokemon):
+    return Van.Pokemon.get_name_pok(pokemon)
 
