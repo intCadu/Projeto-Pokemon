@@ -1,5 +1,6 @@
-import Do_it
+import Function
 import random
+import Van
 
 class Player:
     def __init__(self, gender, name, age):
@@ -9,50 +10,55 @@ class Player:
         
     
     def get_information(self):
-        return (f"GENDER: {jogador}, NAME: {nome_jogador}, AGE: {idade_jogador}")
+        return (f"NAME: {nome_jogador},AGE: {idade_jogador}, GENDER: {jogador}")
     
     def set_name(self, new_name):
         self.name = new_name
         return new_name
 
+Penny_Team1 = []
+Penny_Team2 = []
 Bag_Pok = []
-Bag_Items = ["Wallet"]
+Bag_Items = []
 Bag_pc = []
-Wallet = 1000
+Wallet = 5000
 
 jogador = ""
 nome_jogador = ""
 Game = True
 while Game:
     
-    
-    print("Press B(BOY) or G(GIRL)!")
-    ask_Tipo = input("Chose your Gender:")   
-    if ask_Tipo.upper() == "B":
-        jogador = "Boy"
-        pass
-    elif ask_Tipo.upper() == "G":
-        jogador = "Girl"
-        pass
-    else:
-        print("INVALID ANSWER!!!")
-        print("TRY AGAIN!!")
-        break
-    age_jogador = int(input("What's your age?"))
-    if age_jogador:
-        if age_jogador < 100:
-            idade_jogador = age_jogador
-            pass
-        elif age_jogador > 100:
-            print("INVALID AGE!!")
-            print("TRY AGAIN!!")
-            break
+    gender_conf = True
+    while gender_conf:
+        print("Press B(BOY) or G(GIRL)!")
+        ask_Tipo = input("Chose your Gender:")   
+        if ask_Tipo.upper() == "B":
+            jogador = "Boy"
+            gender_conf = False
+        elif ask_Tipo.upper() == "G":
+            jogador = "Girl"
+            gender_conf = False
         else:
-            break
-    else:
-        print("INVALID ANSWER!!!")
-        print("TRY AGAIN!!")
-        break
+            print("INVALID ANSWER!!!")
+            print("TRY AGAIN!!")
+            pass
+    age_conf = True
+    while age_conf:    
+        age_jogador = input("What's your age?")
+        if age_jogador.isnumeric():
+            if int(age_jogador) < 100:
+                idade_jogador = age_jogador
+                age_conf = False
+            elif int(age_jogador) > 100:
+                print("INVALID AGE!!")
+                print("TRY AGAIN!!")
+                pass
+            else:
+                pass
+        else:
+            print("INVALID ANSWER!!!")
+            print("TRY AGAIN!!")
+            pass
 
 
     nome_jogador = input("What's the player name?")
@@ -83,9 +89,9 @@ while Game:
     partner = True
     while partner:
         print('''CHOSE YOUR PATH!!
-        1 -- GO TO LABORATORY 
-        2 -- TALK TO MOM
-        3 -- GO TO ROOM''')
+1 -- GO TO LABORATORY 
+2 -- TALK TO MOM
+3 -- GO TO ROOM''')
 
         path_jogador = input("Select 1, 2 or 3:")
         if path_jogador == "1":
@@ -128,7 +134,7 @@ while Game:
                                 case "1":
                                     x = input("You want Charmander to be your partner?(Y/N)")
                                     if x.upper() == "Y":
-                                        Bag_Pok.append("Charmander")
+                                        Bag_Pok.append(Van.poke004)
                                         print("Charmander was added on your team")
                                         i = False
                                         partner = False
@@ -139,7 +145,7 @@ while Game:
                                 case "2":
                                     x = input("You want Squirtle to be your partner?(Y/N)")
                                     if x.upper() == "Y":
-                                        Bag_Pok.append("Squirtle")
+                                        Bag_Pok.append(Van.poke007)
                                         print("Squirtle was added on your team")
                                         i = False
                                         partner = False
@@ -150,7 +156,7 @@ while Game:
                                 case "3":
                                     x = input("You want Bulbassaur to be your partner?(Y/N)")
                                     if x.upper() == "Y":
-                                        Bag_Pok.append("Bulbassaur")
+                                        Bag_Pok.append(Van.poke001)
                                         print("Bulbassaur was added on your team")
                                         i = False
                                         partner = False
@@ -172,10 +178,9 @@ while Game:
                     x = input("Press enter...")
                     print(f"See you later {player1.name}!!")
                     pass
-
                          
         elif path_jogador == "2":
-            if jogador == "BOY":
+            if jogador == "Boy":
                 print("Hey son, where are you going?")
                 x = input("Press enter...")
                 print("I know, we just moved and you want to explore the city, ain't it?")
@@ -184,7 +189,7 @@ while Game:
                 x = input("Press enter...")
                 print("Bye baby, hurry up!!")
                 pass
-            if jogador == "GIRL":
+            elif jogador == "Girl":
                 print("Hey daughter, where are you going?")
                 x = input("Press enter...")
                 print("I know, we just moved and you want to explore the city, ain't it?")
@@ -193,6 +198,10 @@ while Game:
                 x = input("Press enter...")
                 print("Bye baby, hurry up!!")
                 pass
+            else:
+                print("ERROR!")
+                x = input("Press enter...")
+                pass    
 
         elif path_jogador == "3":
             print("YOU: It's just my room, nothing important...")
@@ -200,25 +209,30 @@ while Game:
             print("YOU: Oh my PC, maybe there have some important thing...")
             computer = input("Look your PC?(Y/N)")
             if computer.upper() == "Y":
-                print("YOU: Let's see... Oh look i have one potion!!")
-                take_potion = input("Take the potion?(Y/N)")
-                if take_potion.upper() == "Y":
-                    if "Potion" not in Bag_Items:
-                        print("YOU: I gonna take it!!")
-                        Bag_Items.append("Potion")
-                        pass
-                    elif "Potion" in Bag_Items:
-                        print("You already take it!")
+                if "Potion" not in Bag_Items:
+                    print("YOU: Let's see... Oh look i have one potion!!")
+                    take_potion = input("Take the potion?(Y/N)")
+                    if take_potion.upper() == "Y":
+                        if "Potion" not in Bag_Items:
+                            print("YOU: I gonna take it!!")
+                            Bag_Items.append("Potion")
+                            pass
+                        else:
+                            print("ERROR!")
+                            x = input("Press enter...")
+                            pass
+                    elif take_potion.upper() == "N":
+                        print("Maybe next time...")
                         x = input("Press enter...")
+                        print("I need to hurry up!!")
                         pass
-                    else:
-                        print("ERROR!")
-                        x = input("Press enter...")
-                        pass
-                elif take_potion.upper() == "N":
-                    print("Maybe next time...")
+                elif "Potion" in Bag_Items:
+                    print("YOU: Let's see... Nothing here!")
                     x = input("Press enter...")
-                    print("I need to hurry up!!")
+                    pass
+                else:
+                    print("ERROR!")
+                    x = input("Press enter...")
                     pass
             elif computer.upper() == "N":
                 print("Maybe next time...")
@@ -241,6 +255,13 @@ while Game:
     print("MOM: But despite that, he always dreamed of seeing you become a Pokemon Trainer!")
     x = input("Press enter...")
     print("MOM: Hurry up, take your things, don't forget anything...")
+    x = input("Press enter...")
+    print("MOM: Hey i almost forgot, take it... ")
+    x = input("Press enter...")
+    print("MOM: You will need this on your journey...")
+    Bag_Items.append("Wallet")
+    x = input("Press enter...")
+    print("-- YOU RECIEVED 5000 CAU COINS --")
     x = input("Press enter...")
     print("MOM: Your journey start now, go ahead!")
     x = input("Press enter...")
@@ -282,6 +303,7 @@ while Game:
                 pass
             else:
                 pass
+        
         elif start_route == "2":
             x = input("You really want talk with Mayor?(Y/N)")
             if x.upper() == "N":
@@ -300,6 +322,7 @@ while Game:
                 pass
             else:
                 pass
+        
         elif start_route == "3":
             x = input("You really want go to ROUTE 222?(Y/N)")
             if x.upper() == "N":
@@ -649,7 +672,7 @@ that allows you to capture and store Pokemons inside it''')
                                     x = input("Press enter...")
                                     trade = False
                                 elif confirm.upper() == "Y":
-                                    Do_it.change_team(trade1, trade2)
+                                    Function.change_team(trade1, trade2)
                                     x = input("Press enter...")
                                     print("Successful exchange!!")
                                     print(f"{trade1} is in your PC!")
@@ -692,6 +715,7 @@ that allows you to capture and store Pokemons inside it''')
                 print("INVALID!!")
                 x = input("Press enter...")
                 pass
+        
         elif lake_path.upper() == "2":
             if "Super Rod" in Bag_Items:
                 print("-- IN HARBOR --")
@@ -757,7 +781,7 @@ that allows you to capture and store Pokemons inside it''')
                                 if do_boat in ("1", "2", "3"):
                                     print("Using Super Rod...")
                                     x = input("Press enter...")
-                                    find = (Do_it.found_lake())
+                                    find = (Function.found_lake())
                                     if find != "Nothing here...":
                                         ask_catch = input(f"Try catch {find}?(Y/N)")
                                         if ask_catch.upper() == "N":
@@ -876,7 +900,25 @@ that allows you to capture and store Pokemons inside it''')
                                                     else:
                                                         print("INVALID!!")
                                                         x = input("Press enter...")
-                                                        pass            
+                                                        pass
+                                                elif wich_ball == "0":
+                                                    run = input("You want to run?(Y/N)")
+                                                    if run.upper() == "N":
+                                                        print("Oskey?!")
+                                                        x = input("Press enter...")
+                                                        pass
+                                                    elif run.upper() == "Y":
+                                                        print("Runing away...")
+                                                        x = input("Press enter...")
+                                                        trhow_ball = False
+                                                    else:
+                                                        print("INVALID!!")
+                                                        x = input("Press enter...")
+                                                        pass
+                                                else:
+                                                    print("INVALID!!")
+                                                    x = input("Press enter...")
+                                                    pass
                                     elif find == "Nothing here...":
                                         print("You find nothing...")
                                         x = input("Press enter...")
@@ -894,7 +936,29 @@ that allows you to capture and store Pokemons inside it''')
                                     elif do_exit.upper() == "Y":
                                         print("Leaving...")
                                         x = input("Press enter...")
-                                        on_boat = False
+                                        print("-- IN HARBOR --")
+                                        x = input("Press enter...")
+                                        if "Battle Ticket" not in Bag_Items:
+                                            print("CAPTAIN: I'ts the end of our adventure in Tabapua lake...")
+                                            x = input("Press enter...")
+                                            print("CAPTAIN: You need to go ahead with your journey...")
+                                            x = input("Press enter...")
+                                            print("CAPTAIN: Best of luck with it...")
+                                            x = input("Press enter...")
+                                            print("CAPTAIN: Oh wait. i almost forgot...")
+                                            x = input("Press enter...")
+                                            print("CAPTAIN: Take this, a Battle Ticket!")
+                                            x = input("Press enter...")
+                                            print("CAPTAIN: You need this to enter in Battle Arena!")
+                                            x = input("Press enter...")
+                                            print("CAPTAIN: I think you could win this challenge...")
+                                            Bag_Items.append("Battle Ticket")
+                                            x = input("Press enter...")
+                                            on_boat = False
+                                        else:
+                                            print("Leaving...")
+                                            x = input("Press enter...")
+                                            on_boat = False
                                     else: 
                                         print("INVALID!!")
                                         x = input("Press enter...")
@@ -924,6 +988,7 @@ that allows you to capture and store Pokemons inside it''')
                 print("INVALID!!")
                 x = input("Press enter...")
                 pass
+        
         elif lake_path.upper() == "3":
             store = input("Do you really want to go into the store?(Y/N)")
             if store.upper() == "N":
@@ -1016,7 +1081,7 @@ that allows you to capture and store Pokemons inside it''')
                                         quantidade = input("How many do you want?")
                                         if quantidade.isnumeric() > 0:
                                             valor = (int(quantidade) * 400)
-                                            print(f"The price for {quantidade} Pokeballs is {valor}!")
+                                            print(f"The price for {quantidade} Greatball is {valor}!")
                                             compra = input("Want to buy Greatball?(Y/N)")
                                             if compra.upper() == "N":
                                                 print("Oskey?!")
@@ -1031,9 +1096,9 @@ that allows you to capture and store Pokemons inside it''')
                                                 else:
                                                     Wallet = total
                                                     print(f"Purchase made, remaining amount in wallet is {Wallet}!")
-                                                    print(f"{quantidade} Pokeball was added!")
+                                                    print(f"{quantidade} Greatball was added!")
                                                     for i in range(1, int(quantidade) + 1):
-                                                        Bag_Items.append("Pokeball")
+                                                        Bag_Items.append("Greatball")
                                                     x = input("Press enter...")
                                                     buy_pokeball = False
                                             else:
@@ -1048,7 +1113,7 @@ that allows you to capture and store Pokemons inside it''')
                                         quantidade = input("How many do you want?")
                                         if quantidade.isnumeric() > 0:
                                             valor = (int(quantidade) * 600)
-                                            print(f"The price for {quantidade} Pokeballs is {valor}!")
+                                            print(f"The price for {quantidade} Ultraball is {valor}!")
                                             compra = input("Want to buy Ultraball?(Y/N)")
                                             if compra.upper() == "N":
                                                 print("Oskey?!")
@@ -1063,9 +1128,9 @@ that allows you to capture and store Pokemons inside it''')
                                                 else:
                                                     Wallet = total
                                                     print(f"Purchase made, remaining amount in wallet is {Wallet}!")
-                                                    print(f"{quantidade} Pokeball was added!")
+                                                    print(f"{quantidade} Ultraball was added!")
                                                     for i in range(1, int(quantidade) + 1):
-                                                        Bag_Items.append("Pokeball")
+                                                        Bag_Items.append("Ultraball")
                                                     x = input("Press enter...")
                                                     buy_pokeball = False
                                             else:
@@ -1406,9 +1471,49 @@ that allows you to capture and store Pokemons inside it''')
                 x = input("Press enter...")
                 pass
                 
-
-
-        # elif lake_path.upper() == "4":
+        elif lake_path.upper() == "4":
+            print("-- IN BATTLE ARENA --")
+            x = input("Press enter...")
+            if "Battle Ticket" in Bag_Items:
+                print("YOU: So, this is the Battle Arena?!")
+                x = input("Press enter...")
+                print("YOU: I think this can be a interesting thing...")
+                x = input("Press enter...")
+                print("-- SOMEONE CALLS --")
+                x = input("Press enter...")
+                print(f"PENNY: Hey you, you are the {player1.name}?")
+                x = input("Press enter...")
+                print("PENNY: So thats you, what are you doing here...")
+                x = input("Press enter...")
+                print("PENNY: This tournmet is only to great Pokemon Trainers...")
+                x = input("Press enter...")
+                print("PENNY: Whatever i don't think you will won this...")
+                x = input("Press enter...")
+                print("PENNY: What do you think, let's battle?")
+                x = input("Press enter...")
+                print("PENNY: I want to train little bit before the tournment...")
+                x = input("Press enter...")
+                print("PENNY: Although I think you won't do much good...")
+                penny_battle = input("You want to battle with Penny?(Y/N)")
+                if penny_battle.upper() == "N":
+                    print("PENNY: Oh, ok! I don't knewed you are a coward!")
+                    x = input("Press enter...")
+                    print(f"PENNY: Good luck {player1.name}, i think you gonna need it...")
+                    x = input("Press enter...")
+                    pass
+                if penny_battle.upper() == "Y":
+                    print("PENNY: So let's battle...")
+                    x = input("Press enter...")
+                    print("-- IN BATTLE --")
+                    x = input("Press enter...")
+    
+            elif "Battle Ticket" not in Bag_Items:
+                print("-- YOU CAN'T ENTER HERE --")
+                x = input("Press enter...")
+                print("To enter here you need a Battle Ticket!")
+                x = input("Press enter...")
+                pass  
+            
         # elif lake_path.upper() == "5":
 
 
