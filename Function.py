@@ -1,10 +1,16 @@
 import random
 import Game_Main_Poke
+import vantagenspoke
+
 Bag_Pok = []
 Bag_pc = []
+
+
 lista_tier1 = Game_Main_Poke.lista_pokemon_t1
 lista_tier2 =  Game_Main_Poke.lista_pokemon_t2
 lista_tier3 =  Game_Main_Poke.lista_pokemon_t3
+
+
 poke_tier1_grama = []
 poke_tier1_agua = []
 poke_tier1_fogo = []
@@ -157,7 +163,7 @@ for Pokemon in lista_tier3:
         poke_tier3_inseto.append(Pokemon)
     if Pokemon.elemento == "gelo":
         poke_tier3_gelo.append(Pokemon)
-    
+
 
 def Pc_Pok(pokemon):
     if len(Bag_Pok) == 6:
@@ -172,7 +178,7 @@ def change_team(pokemon1, pokemon2):
         Bag_pc.remove(pokemon2) and Bag_Pok.append(pokemon2)
 
 def found_lake():
-    pok_lake = random.choice([poke_tier1_agua, poke_tier1_gelo])
+    pok_lake = random.choice([poke_tier1_agua, poke_tier1_voador])
     chance_found = random.randint(1, 101)
     if chance_found <= 25:
         nothing = "Nothing here..."
@@ -198,6 +204,5 @@ def found_bush():
         invalid = "INVALID!!"
         return invalid
 
-def name_pok(pokemon):
-    return Van.Pokemon.get_name_pok(pokemon)
+
 

@@ -28,7 +28,7 @@ class Pokemon:
             print("""            ROUND""",contador)
             contador += 1
 
-            if self.Speed > oponente.Speed:
+            if self.Speed >= oponente.Speed:
 
                 dano = (self.Atk*self.vantagem) - oponente.Def
                 if dano > 0:
@@ -37,8 +37,8 @@ class Pokemon:
                     print("The",oponente.name,"Hp downs to",oponente.Hp,"!")
                 else: print("Damage of",self.name,"was null.")
                 if oponente.Hp <= 0:
-                    print(self.name,"WINS THE BATTLE. CONGRATULATIONS!!")
-                    break
+                    Win = print(self.name,"WINS THE BATTLE. CONGRATULATIONS!!")
+                    return "Win"
                 
                 dano = (oponente.Atk*oponente.vantagem) - self.Def
                 if dano > 0:
@@ -47,10 +47,10 @@ class Pokemon:
                     print("The",self.name,"Hp downs to",self.Hp,"!")
                 else: print("Damage of",oponente.name,"was null.")
                 if self.Hp <= 0:
-                    print("YOU LOOSE",oponente.name,"WINS THE BATTLE!!")
-                    break
-
-            if oponente.Speed > self.Speed:
+                    Lose = print("YOU LOOSE",oponente.name,"WINS THE BATTLE!!")
+                    return "Lose"
+                    
+            elif oponente.Speed > self.Speed:
 
                 dano = (oponente.Atk*oponente.vantagem) - self.Def
                 if dano > 0:
@@ -59,9 +59,9 @@ class Pokemon:
                     print("The",self.name,"Hp downs to",self.Hp,"!")
                 else: print("Damage of",oponente.name,"was null.")
                 if self.Hp <= 0:
-                    print("YOU LOOSE",oponente.name,"WINS THE BATTLE!!")
-                    break
-
+                    Lose = print("YOU LOOSE",oponente.name,"WINS THE BATTLE!!")
+                    return "Lose"
+                    
                 dano = (self.Atk*self.vantagem) - oponente.Def
                 if dano > 0:
                     oponente.Hp = oponente.Hp - dano
@@ -69,9 +69,9 @@ class Pokemon:
                     print("The",oponente.name,"Hp downs to",oponente.Hp,"!")
                 else: print("Damage of",self.name,"was null.")
                 if oponente.Hp <= 0:
-                    print(self.name,"WINS THE BATTLE. CONGRATULATIONS!!")
-                    break
-
+                    Win = print(self.name,"WINS THE BATTLE. CONGRATULATIONS!!")
+                    return "Win"
+                    
     def get_name_pok(self):
         return self.name
     
