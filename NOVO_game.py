@@ -16,7 +16,7 @@ class Player:
         self.name = new_name
         return new_name
 
-Penny_team1 = []
+Penny_team1 = [vantagenspoke.poke007,vantagenspoke.poke016,vantagenspoke.poke056]
 Penny_fainted = []
 Penny_team2 = []
 Peny_fainted2 = []
@@ -24,19 +24,32 @@ Bag_Pok = []
 Bag_fainted = []
 Bag_Items = []
 Bag_badges = []
+gym_badges = []
 Bag_pc = []
-kripke_team = []
+kripke_team = [vantagenspoke.poke013, vantagenspoke.poke014,vantagenspoke.poke010]
 kripke_fainted = []
-stuart_team = []
+stuart_team = [vantagenspoke.poke004,vantagenspoke.poke037,vantagenspoke.poke058]
 stuart_fainted = []
-howard_team = []
+howard_team = [vantagenspoke.poke054,vantagenspoke.poke060,vantagenspoke.poke072]
 howard_fainted = []
-raj_team = []
+raj_team = [vantagenspoke.poke043,vantagenspoke.poke069,vantagenspoke.poke102]
 raj_fainted = []
-leonard_team = []
+leonard_team = [vantagenspoke.poke052, vantagenspoke.poke084, vantagenspoke.poke039]
 leonard_fainted = []
-sheldon_team = []
+sheldon_team = [vantagenspoke.poke063,vantagenspoke.poke096]
 sheldon_fainted = []
+
+gym1_team = [vantagenspoke.poke114, vantagenspoke.poke111, vantagenspoke.poke095]
+gym1_fainted = []
+gym2_team = [vantagenspoke.poke093, vantagenspoke.poke083, vantagenspoke.poke077]
+gym2_fainted = []
+gym3_team = [vantagenspoke.poke083, vantagenspoke.poke067, vantagenspoke.poke061]
+gym3_fainted = []
+gym4_team = [vantagenspoke.poke061, vantagenspoke.poke070, vantagenspoke.poke075]
+gym4_fainted = []
+
+dad_team = [vantagenspoke.poke128, vantagenspoke.poke115 , vantagenspoke.poke113, vantagenspoke.poke108, vantagenspoke.poke085]
+dad_fainted = []
 
 Wallet = 5000
 
@@ -1567,7 +1580,7 @@ that allows you to capture and store Pokemons inside it''')
                                                 x = input("Press enter...")
                                                 print("You lose for Penny...")
                                                 Bag_badges.append("Penny's Fight")
-                                                penny_battle = False
+                                                Penny_battle = False
                                             else:
                                                 pass
                                         elif battle == "Win":
@@ -1580,7 +1593,7 @@ that allows you to capture and store Pokemons inside it''')
                                                 x = input("Press enter...")
                                                 print("You Won!!")
                                                 Bag_badges.append("Penny's Fight")
-                                                penny_battle = False
+                                                Penny_battle = False
                                             else:
                                                 pass
                                         else:
@@ -2276,6 +2289,7 @@ that allows you to capture and store Pokemons inside it''')
                 # elif coco_select == "3":
                 # elif coco_select == "4":
                 # elif coco_select == "9":
+        
         elif fortal_path == "2":
             store1 = input("Do you really want to go into the store?(Y/N)")
             if store1.upper() == "N":
@@ -2756,6 +2770,7 @@ that allows you to capture and store Pokemons inside it''')
                 print("INVALID!!")
                 x = input("Press enter...")
                 pass
+        
         elif fortal_path == "3":
             print("-- ENTERING UPA --")
             x = input("Press enter...")
@@ -2891,7 +2906,448 @@ that allows you to capture and store Pokemons inside it''')
                 print("INVALID!!")
                 x = input("Press enter...")
                 pass
-        # elif fortal_path == "4":
+        
+        elif fortal_path == "4":
+            gym = True
+            while gym:
+                if len(Bag_Pok) <= 0:
+                    print("Your Pokemons are fainted...")
+                    x = input("Press enter...")
+                    print("Go to upa and recover them!")
+                    x = input("Press enter...")
+                    pass
+                elif len(Bag_Pok) > 0:
+                    print("-- IN FORTAL GYM --")
+                    x = input("Press enter...")
+                    gym_select = input('''-- CHOOSE GYM PATH --
+            1 -- CAPTAIN WAGNER
+            2 -- JOSEPH SARTO
+            3 -- EMANUEL DE FRENTES
+            4 -- EMANUEL DE COSTAS
+            5 -- BLACK ROOM''')
+                    do_gym = input("Select 1, 2, 3, 4 or 5:(Press 0 to leave)")
+                    if do_gym == "1":
+                        if "First battle" not in Bag_badges:
+                            gym1_battle = True
+                            while gym1_battle:
+                                contador_team = 0
+                                for i in Bag_Pok:
+                                    contador_team += 1
+                                    print(f"{contador_team} -- {i.get_name_pok()}")
+                                select_fighter = input(f"Select one in {len(Bag_Pok)} Pokemons:")
+                                if select_fighter.isnumeric():
+                                    if int(select_fighter) in range(1, len(Bag_Pok) + 1):
+                                        selected_pokemon = Bag_Pok[int(select_fighter) - 1]
+                                        gym1_selected = random.choice(gym1_team)
+                                        battle = selected_pokemon.Battle(gym1_selected)
+                                        if battle == "Lose":
+                                            print("You lose the battle...")
+                                            Bag_Pok.remove(selected_pokemon)
+                                            Bag_fainted.append(selected_pokemon)
+                                            x = input("Press enter...")
+                                            if len(Bag_Pok) == 0:
+                                                print("All your Pokemons are fainted!")
+                                                x = input("Press enter...")
+                                                print("You lose...")
+                                                gym1_battle = False
+                                            else:
+                                                pass
+                                        elif battle == "Win":
+                                            print("You win the battle!")
+                                            gym1_team.remove(gym1_selected)
+                                            gym1_fainted.append(gym1_selected)
+                                            x = input("Press enter...")
+                                            if len(gym1_team) == 0:
+                                                print("All of Captain's Pokemon are fainted...")
+                                                x = input("Press enter...")
+                                                print("You Won!!")
+                                                gym_badges.append("First battle")
+                                                gym1_battle = False
+                                            else:
+                                                pass
+                                        else:
+                                            print("INVALID!!")
+                                            x = input("Press enter...")
+                                            pass
+                                    elif int(select_fighter) not in range(1, len(Bag_Pok) + 1):
+                                        print("INVALID!!")
+                                        x = input("Press enter...")
+                                        pass
+                                elif select_fighter.isnumeric() != int:
+                                    print("INVALID!!")
+                                    x = input("Press enter...")
+                                    pass
+                                else:
+                                    print("INVALID!!")
+                                    x = input("Press enter...")
+                                    pass
+                        elif "First battle" in Bag_badges:
+                            print("You all ready defeat him...")
+                            x = input("Press enter...")
+                            pass
+                        else:
+                            print("INVALID!!")
+                            x = input("Press enter...")
+                            pass
+                    elif do_gym == "2":
+                        if "Second battle" not in Bag_badges:
+                            gym2_battle = True
+                            while gym2_battle:
+                                contador_team = 0
+                                for i in Bag_Pok:
+                                    contador_team += 1
+                                    print(f"{contador_team} -- {i.get_name_pok()}")
+                                select_fighter = input(f"Select one in {len(Bag_Pok)} Pokemons:")
+                                if select_fighter.isnumeric():
+                                    if int(select_fighter) in range(1, len(Bag_Pok) + 1):
+                                        selected_pokemon = Bag_Pok[int(select_fighter) - 1]
+                                        gym2_selected = random.choice(gym2_team)
+                                        battle = selected_pokemon.Battle(gym2_selected)
+                                        if battle == "Lose":
+                                            print("You lose the battle...")
+                                            Bag_Pok.remove(selected_pokemon)
+                                            Bag_fainted.append(selected_pokemon)
+                                            x = input("Press enter...")
+                                            if len(Bag_Pok) == 0:
+                                                print("All your Pokemons are fainted!")
+                                                x = input("Press enter...")
+                                                print("You lose...")
+                                                gym2_battle = False
+                                            else:
+                                                pass
+                                        elif battle == "Win":
+                                            print("You win the battle!")
+                                            gym2_team.remove(gym2_selected)
+                                            gym2_fainted.append(gym2_selected)
+                                            x = input("Press enter...")
+                                            if len(gym2_team) == 0:
+                                                print("All of Sarto's Pokemon are fainted...")
+                                                x = input("Press enter...")
+                                                print("You Won!!")
+                                                gym_badges.append("Second battle")
+                                                gym2_battle = False
+                                            else:
+                                                pass
+                                        else:
+                                            print("INVALID!!")
+                                            x = input("Press enter...")
+                                            pass
+                                    elif int(select_fighter) not in range(1, len(Bag_Pok) + 1):
+                                        print("INVALID!!")
+                                        x = input("Press enter...")
+                                        pass
+                                elif select_fighter.isnumeric() != int:
+                                    print("INVALID!!")
+                                    x = input("Press enter...")
+                                    pass
+                                else:
+                                    print("INVALID!!")
+                                    x = input("Press enter...")
+                                    pass
+                        elif "Second battle" in Bag_badges: 
+                            print("You all ready defeat him...")
+                            x = input("Press enter...")
+                            pass 
+                        else:
+                            print("INVALID!!")
+                            x = input("Press enter...")
+                            pass
+                    elif do_gym == "3":
+                        if "Third battle" not in Bag_badges:
+                            gym3_battle = True
+                            while gym3_battle:
+                                contador_team = 0
+                                for i in Bag_Pok:
+                                    contador_team += 1
+                                    print(f"{contador_team} -- {i.get_name_pok()}")
+                                select_fighter = input(f"Select one in {len(Bag_Pok)} Pokemons:")
+                                if select_fighter.isnumeric():
+                                    if int(select_fighter) in range(1, len(Bag_Pok) + 1):
+                                        selected_pokemon = Bag_Pok[int(select_fighter) - 1]
+                                        gym3_selected = random.choice(gym3_team)
+                                        battle = selected_pokemon.Battle(gym3_selected)
+                                        if battle == "Lose":
+                                            print("You lose the battle...")
+                                            Bag_Pok.remove(selected_pokemon)
+                                            Bag_fainted.append(selected_pokemon)
+                                            x = input("Press enter...")
+                                            if len(Bag_Pok) == 0:
+                                                print("All your Pokemons are fainted!")
+                                                x = input("Press enter...")
+                                                print("You lose...")
+                                                gym3_battle = False
+                                            else:
+                                                pass
+                                        elif battle == "Win":
+                                            print("You win the battle!")
+                                            gym3_team.remove(gym3_selected)
+                                            gym3_fainted.append(gym3_selected)
+                                            x = input("Press enter...")
+                                            if len(gym3_team) == 0:
+                                                print("All of Emanuel de Frente's Pokemon are fainted...")
+                                                x = input("Press enter...")
+                                                print("You Won!!")
+                                                gym_badges.append("Third battle")
+                                                gym3_battle = False
+                                            else:
+                                                pass
+                                        else:
+                                            print("INVALID!!")
+                                            x = input("Press enter...")
+                                            pass
+                                    elif int(select_fighter) not in range(1, len(Bag_Pok) + 1):
+                                        print("INVALID!!")
+                                        x = input("Press enter...")
+                                        pass
+                                elif select_fighter.isnumeric() != int:
+                                    print("INVALID!!")
+                                    x = input("Press enter...")
+                                    pass
+                                else:
+                                    print("INVALID!!")
+                                    x = input("Press enter...")
+                                    pass
+                        elif "Third battle" in Bag_badges:
+                            print("You all ready defeat him...")
+                            x = input("Press enter...")
+                            pass 
+                        else:
+                            print("INVALID!!")
+                            x = input("Press enter...")
+                            pass
+                    elif do_gym == "4":
+                        if "Fourth battle" not in Bag_badges:
+                            gym4_battle = True
+                            while gym4_battle:
+                                contador_team = 0
+                                for i in Bag_Pok:
+                                    contador_team += 1
+                                    print(f"{contador_team} -- {i.get_name_pok()}")
+                                select_fighter = input(f"Select one in {len(Bag_Pok)} Pokemons:")
+                                if select_fighter.isnumeric():
+                                    if int(select_fighter) in range(1, len(Bag_Pok) + 1):
+                                        selected_pokemon = Bag_Pok[int(select_fighter) - 1]
+                                        gym4_selected = random.choice(gym4_team)
+                                        battle = selected_pokemon.Battle(gym4_selected)
+                                        if battle == "Lose":
+                                            print("You lose the battle...")
+                                            Bag_Pok.remove(selected_pokemon)
+                                            Bag_fainted.append(selected_pokemon)
+                                            x = input("Press enter...")
+                                            if len(Bag_Pok) == 0:
+                                                print("All your Pokemons are fainted!")
+                                                x = input("Press enter...")
+                                                print("You lose...")
+                                                gym4_battle = False
+                                            else:
+                                                pass
+                                        elif battle == "Win":
+                                            print("You win the battle!")
+                                            gym4_team.remove(gym4_selected)
+                                            gym4_fainted.append(gym4_selected)
+                                            x = input("Press enter...")
+                                            if len(gym4_team) == 0:
+                                                print("All of Emanuel de Costa's Pokemon are fainted...")
+                                                x = input("Press enter...")
+                                                print("You Won!!")
+                                                gym_badges.append("Fourth battle")
+                                                gym4_battle = False
+                                            else:
+                                                pass
+                                        else:
+                                            print("INVALID!!")
+                                            x = input("Press enter...")
+                                            pass
+                                    elif int(select_fighter) not in range(1, len(Bag_Pok) + 1):
+                                        print("INVALID!!")
+                                        x = input("Press enter...")
+                                        pass
+                                elif select_fighter.isnumeric() != int:
+                                    print("INVALID!!")
+                                    x = input("Press enter...")
+                                    pass
+                                else:
+                                    print("INVALID!!")
+                                    x = input("Press enter...")
+                                    pass
+                        elif "Fourth battle" in Bag_badges:
+                            print("You all ready defeat him...")
+                            x = input("Press enter...")
+                            pass 
+                        else:
+                            print("INVALID!!")
+                            x = input("Press enter...")
+                            pass            
+                    elif do_gym == "5":
+                        if len(gym_badges) >= 4:
+                            print("-- IN THE GYM LEADER ROOM --")
+                            if jogador == "Boy":
+                                print("GYM LEADER(DAD): Hey son, your mom told me you are in a journey...")
+                                x = input("Press enter...")
+                                print("GYM LEADER(DAD): But i never tought see you here...")
+                                x = input("Press enter...")
+                                print("GYM LEADER(DAD): You know i'm the Gym leader here in Fortal City...")
+                                x = input("Press enter...")
+                                print("GYM LEADER(DAD): And i have an obligation...")
+                                x = input("Press enter...")
+                                print("GYM LEADER(DAD): If you want to go trough me...")
+                                x = input("Press enter...")
+                                print("GYM LEADER(DAD): I couldn't allow this...")
+                                x = input("Press enter...")
+                                print("GYM LEADER(DAD): Let's battle son...")
+                                dad_battle = True
+                                while dad_battle:
+                                    contador_team = 0
+                                    for i in Bag_Pok:
+                                        contador_team += 1
+                                        print(f"{contador_team} -- {i.get_name_pok()}")
+                                    select_fighter = input(f"Select one in {len(Bag_Pok)} Pokemons:")
+                                    if select_fighter.isnumeric():
+                                        if int(select_fighter) in range(1, len(Bag_Pok) + 1):
+                                            selected_pokemon = Bag_Pok[int(select_fighter) - 1]
+                                            dad_selected = random.choice(dad_team)
+                                            battle = selected_pokemon.Battle(dad_selected)
+                                            if battle == "Lose":
+                                                print("You lose the battle...")
+                                                Bag_Pok.remove(selected_pokemon)
+                                                Bag_fainted.append(selected_pokemon)
+                                                x = input("Press enter...")
+                                                if len(Bag_Pok) == 0:
+                                                    print("All your Pokemons are fainted!")
+                                                    x = input("Press enter...")
+                                                    print("You lose...")
+                                                    dad_battle = False
+                                                else:
+                                                    pass
+                                            elif battle == "Win":
+                                                print("You win the battle!")
+                                                dad_team.remove(dad_selected)
+                                                dad_fainted.append(dad_selected)
+                                                x = input("Press enter...")
+                                                if len(dad_team) == 0:
+                                                    print("All of Dad's Pokemon are fainted...")
+                                                    x = input("Press enter...")
+                                                    print("You Won!!")
+                                                    Bag_badges.append("Fourth battle")
+                                                    dad_battle = False
+                                                    gym =  False
+                                                    fortal_journey = False
+                                                else:
+                                                    pass
+                                            else:
+                                                print("INVALID!!")
+                                                x = input("Press enter...")
+                                                pass
+                                        elif int(select_fighter) not in range(1, len(Bag_Pok) + 1):
+                                            print("INVALID!!")
+                                            x = input("Press enter...")
+                                            pass
+                                    elif select_fighter.isnumeric() != int:
+                                        print("INVALID!!")
+                                        x = input("Press enter...")
+                                        pass
+                                    else:
+                                        print("INVALID!!")
+                                        x = input("Press enter...")
+                                        pass
+                            elif jogador == "Girl":
+                                print("GYM LEADER(DAD): Hey daughter, your mom told me you are in a journey...")
+                                x = input("Press enter...")
+                                print("GYM LEADER(DAD): But i never tought see you here...")
+                                x = input("Press enter...")
+                                print("GYM LEADER(DAD): You know i'm the Gym leader here in Fortal City...")
+                                x = input("Press enter...")
+                                print("GYM LEADER(DAD): And i have an obligation...")
+                                x = input("Press enter...")
+                                print("GYM LEADER(DAD): If you want to go trough me...")
+                                x = input("Press enter...")
+                                print("GYM LEADER(DAD): I couldn't allow this...")
+                                x = input("Press enter...")
+                                print("GYM LEADER(DAD): Let's battle daughter...")
+                                dad_battle = True
+                                while dad_battle:
+                                    contador_team = 0
+                                    for i in Bag_Pok:
+                                        contador_team += 1
+                                        print(f"{contador_team} -- {i.get_name_pok()}")
+                                    select_fighter = input(f"Select one in {len(Bag_Pok)} Pokemons:")
+                                    if select_fighter.isnumeric():
+                                        if int(select_fighter) in range(1, len(Bag_Pok) + 1):
+                                            selected_pokemon = Bag_Pok[int(select_fighter) - 1]
+                                            dad_selected = random.choice(dad_team)
+                                            battle = selected_pokemon.Battle(dad_selected)
+                                            if battle == "Lose":
+                                                print("You lose the battle...")
+                                                Bag_Pok.remove(selected_pokemon)
+                                                Bag_fainted.append(selected_pokemon)
+                                                x = input("Press enter...")
+                                                if len(Bag_Pok) == 0:
+                                                    print("All your Pokemons are fainted!")
+                                                    x = input("Press enter...")
+                                                    print("You lose...")
+                                                    dad_battle = False
+                                                else:
+                                                    pass
+                                            elif battle == "Win":
+                                                print("You win the battle!")
+                                                dad_team.remove(dad_selected)
+                                                dad_fainted.append(dad_selected)
+                                                x = input("Press enter...")
+                                                if len(dad_team) == 0:
+                                                    print("All of Dad's Pokemon are fainted...")
+                                                    x = input("Press enter...")
+                                                    print("You Won!!")
+                                                    x = input("Press enter...")
+                                                    print("You recieved the Normal Badge")
+                                                    Bag_badges.append("Normal Badge")
+                                                    dad_battle = False
+                                                    fortal_jouyney = False
+                                                else:
+                                                    pass
+                                            else:
+                                                print("INVALID!!")
+                                                x = input("Press enter...")
+                                                pass
+                                        elif int(select_fighter) not in range(1, len(Bag_Pok) + 1):
+                                            print("INVALID!!")
+                                            x = input("Press enter...")
+                                            pass
+                                    elif select_fighter.isnumeric() != int:
+                                        print("INVALID!!")
+                                        x = input("Press enter...")
+                                        pass
+                                    else:
+                                        print("INVALID!!")
+                                        x = input("Press enter...")
+                                        pass 
+                            else:
+                                print("INVALID!!")
+                                x = input("Press enter...")
+                                pass           
+                        elif len(gym_badges) < 4:
+                            print(gym_badges)
+                            print("You need to defeat the other Trainers...")
+                            x = input("Press enter...")
+                            pass            
+                        else:
+                            print("INVALID!!")
+                            x = input("Press enter...")
+                            pass
+                    elif do_gym == "0":
+                        exit_gym = input("You want to leave the gym?(Y/N)")
+                        if exit_gym.upper() == "N":
+                            print("Oskey?!")
+                            x = input("Press enter...")
+                            pass
+                        elif exit_gym.upper() == "Y":
+                            print("Leaving...")
+                            x = input("Press enter...")
+                            gym = False
+                    else:
+                        print("INVALID!!")
+                        x = input("Press enter...")
+                        pass        
+        
         elif fortal_path == "5":
             if "Super Rod" in Bag_Items:
                 on_beach = True
@@ -3082,14 +3538,92 @@ that allows you to capture and store Pokemons inside it''')
                         elif do_exit.upper() == "Y":
                             print("Leaving...")
                             x = input("Press enter...")
-                            on_beach = False
-                
+                            on_beach = False                
+        
         else:
             print("INVALID!!")
             x = input("Press enter...")
             pass
 
+    if jogador == "Boy":
+        print("-- OUT OF THE GYM --")
+        x = input("Press enter...")
+        print("DAD: I can believe, i was defeated...")
+        x = input("Press enter...")
+        print("DAD: I'm so proud of you son...")
+        x = input("Press enter...")
+        print("DAD: I think you future gonna be brilliant...")
+        x = input("Press enter...")
+        print("DAD: Your mom and i are proud of you!")
+        x = input("Press enter...")
+        print("DAD: I think you gonna be the best trainer of the world...")
+        x = input("Press enter...")
+        print("DAD: Because you defeated me, take this...")
+        x = input("Press enter...")
+        print("DAD: This is proof of your victory...")
+        x = input("Press enter...")
+        print("-- YOU RECIEVED THE NORMAL BADGE --")
+        Bag_Items.append("The Normal Badge")
+        x = input("Press enter...")
+        print("DAD: I have to return, but you need to complete your journey...")
+        x = input("Press enter...")
+        print("DAD: Are many Pokemons in the wolrd, and you have to see them...")
+        x = input("Press enter...")
+        print("DAD: By son, hope to see you again here!")
+        x = input("Press enter...")
+        print("YOU: This is my path, what is still waiting for me?")
+        print("-- END --")
+        x = input("Press enter...")
+        print('''
+        
+                CREATED BY: EDUARDO ROCHA & RAFAEL BARBOSA 
+                
+    ''')
+        Game = False
+    elif jogador == "Girl":
+        print("-- OUT OF THE GYM --")
+        x = input("Press enter...")
+        print("DAD: I can believe, i was defeated...")
+        x = input("Press enter...")
+        print("DAD: I'm so proud of you daughter...")
+        x = input("Press enter...")
+        print("DAD: I think you future gonna be brilliant...")
+        x = input("Press enter...")
+        print("DAD: Your mom and i are proud of you!")
+        x = input("Press enter...")
+        print("DAD: I think you gonna be the best trainer of the world...")
+        x = input("Press enter...")
+        print("DAD: Because you defeated me, take this...")
+        x = input("Press enter...")
+        print("DAD: This is proof of your victory...")
+        x = input("Press enter...")
+        print("-- YOU RECIEVED THE NORMAL BADGE --")
+        Bag_Items.append("The Normal Badge")
+        x = input("Press enter...")
+        print("DAD: I have to return, but you need to complete your journey...")
+        x = input("Press enter...")
+        print("DAD: Are many Pokemons in the wolrd, and you have to see them...")
+        x = input("Press enter...")
+        print("DAD: By daughter, hope to see you again here!")
+        x = input("Press enter...")
+        print("YOU: This is my path, what is still waiting for me?")
+        print("-- END --")
+        x = input("Press enter...")
+        print('''
+        
+                CREATED BY: EDUARDO ROCHA & RAFAEL BARBOSA 
+                
+    ''')
+        Game = False
+    else:
+        print("INVALID!!")
+        x = input("Press enter...")
+        pass
 
+    
+    
+    
+    
 
 
 

@@ -35,7 +35,11 @@ class Pokemon:
                     oponente.Hp = oponente.Hp - dano
                     print(self.name,"give",dano,"of damage in",oponente.name,"!")
                     print("The",oponente.name,"Hp downs to",oponente.Hp,"!")
-                else: print("Damage of",self.name,"was null.")
+                else: 
+                    dano = 5
+                    oponente.Hp = oponente.Hp - dano
+                    print(self.name,"give",dano,"of damage in",oponente.name,"!")
+                    print("The",oponente.name,"Hp downs to",oponente.Hp,"!")
                 if oponente.Hp <= 0:
                     Win = print(self.name,"WINS THE BATTLE. CONGRATULATIONS!!")
                     return "Win"
@@ -43,9 +47,13 @@ class Pokemon:
                 dano = (oponente.Atk*oponente.vantagem) - self.Def
                 if dano > 0:
                     self.Hp = self.Hp - dano
+                    print(oponente.name,"give",dano,"of damage in",self.name,"!")
+                    print("The",self.name,"Hp downs to",self.Hp,"!")
+                else: 
+                    dano = 5
+                    self.Hp = self.Hp - dano
                     print(oponente.name,"give",dano,"of damage in ",self.name,"!")
                     print("The",self.name,"Hp downs to",self.Hp,"!")
-                else: print("Damage of",oponente.name,"was null.")
                 if self.Hp <= 0:
                     Lose = print("YOU LOOSE",oponente.name,"WINS THE BATTLE!!")
                     return "Lose"
@@ -57,7 +65,11 @@ class Pokemon:
                     self.Hp = self.Hp - dano
                     print(oponente.name,"give",dano,"of damage in ",self.name,"!")
                     print("The",self.name,"Hp downs to",self.Hp,"!")
-                else: print("Damage of",oponente.name,"was null.")
+                else: 
+                    dano = 5
+                    self.Hp = self.Hp - dano
+                    print(oponente.name,"give",dano,"of damage in ",self.name,"!")
+                    print("The",self.name,"Hp downs to",self.Hp,"!")
                 if self.Hp <= 0:
                     Lose = print("YOU LOOSE",oponente.name,"WINS THE BATTLE!!")
                     return "Lose"
@@ -67,13 +79,17 @@ class Pokemon:
                     oponente.Hp = oponente.Hp - dano
                     print(self.name,"give",dano,"of damage in",oponente.name,"!")
                     print("The",oponente.name,"Hp downs to",oponente.Hp,"!")
-                else: print("Damage of",self.name,"was null.")
+                else: 
+                    dano = 5
+                    oponente.Hp = oponente.Hp - dano
+                    print(self.name,"give",dano,"of damage in",oponente.name,"!")
+                    print("The",oponente.name,"Hp downs to",oponente.Hp,"!")
                 if oponente.Hp <= 0:
                     Win = print(self.name,"WINS THE BATTLE. CONGRATULATIONS!!")
                     return "Win"
                     
     def get_name_pok(self):
-        return self.name
+        return f"{self.name} -- {self.elemento}" 
     
 class PokeNormal(Pokemon):
     def __init__(self, name, tier, elemento, Hp, Atk, Def, Speed):
@@ -350,7 +366,7 @@ poke001 = PokeGrama("Bulbasauro",1,"grama",45,65,65,45)
 poke002 = PokeGrama("Ivysaur",2,"grama",60,80,80,60)
 poke003 = PokeGrama("Venusaur",3,"grama",80,100,100,80)
 
-poke004 = PokeFogo("Charmande",1,"fogo",39,60,50,65)
+poke004 = PokeFogo("Charmander",1,"fogo",39,60,50,65)
 poke005 = PokeFogo("Charmeleon",2,"fogo",58,80,65,80)
 poke006 = PokeFogo("Charizard",3,"fogo",78,109,85,100)
 
@@ -406,7 +422,7 @@ poke041 = PokeVenenoso("Zubat",1,"venenoso",40,45,40,55)
 poke042 = PokeVenenoso("Golbat",3,"venenoso",75,80,75,90)
 
 poke043 = PokeGrama("Oddish",1,"grama",45,75,65,30)
-poke044 = PokeGrama("Gloom",100,"grama",60,75,65,40)
+poke044 = PokeGrama("Gloom",1,"grama",60,75,65,40)
 poke045 = PokeGrama("Vileplume",3,"grama",75,110,95,50)
 
 poke046 = PokeInsecto("Paras",1,"insecto",35,70,55,25)
@@ -575,7 +591,7 @@ poke149 = PokeDragao("Dragonite",4,"dragao",91,134,100,80)
 poke150 = PokePsiquico("Mewtwo",5,"psiquico",106,154,90,130)
 
 poke151 = PokePsiquico("Mew",4,"psiquico",100,100,100,100)
-
+poke152 = PokePsiquico("Tariken",5,"psiquico",250,250,250,250)
 
 lista_pokemon = []
 
