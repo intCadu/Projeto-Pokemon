@@ -204,5 +204,87 @@ def found_bush():
         invalid = "INVALID!!"
         return invalid
 
+def coco1_bush():
 
+    pok_bush = random.choice([poke_tier3_eletrico,poke_tier3_fogo,poke_tier3_grama,poke_tier3_fantasma,poke_tier3_fada,poke_tier3_lutador,poke_tier3_normal,poke_tier3_pedra,poke_tier3_venenoso,poke_tier3_psiquico,poke_tier3_voador])
+    chance_found = random.randint(1, 1001)
+    if chance_found < 250:
+        nothing = "Nothing here..."
+        return nothing
+    elif chance_found == 251:
+        coco_bush1 = random.choice(vantagenspoke.poke150, vantagenspoke.poke151,vantagenspoke.poke149)
+        return coco_bush1
+    elif chance_found > 252:
+        coco_bush1 = random.choice(pok_bush)
+        return coco_bush1
+    else:
+        invalid = "INVALID!!"
+        return invalid
 
+def coco2_bush():
+
+    pok_bush = random.choice([poke_tier3_eletrico,poke_tier3_fogo,poke_tier3_grama,poke_tier3_fantasma,poke_tier3_fada,poke_tier3_lutador,poke_tier3_normal,poke_tier3_pedra,poke_tier3_venenoso,poke_tier3_psiquico,poke_tier3_voador])
+    chance_found = random.randint(1, 1001)
+    if chance_found < 250:
+        nothing = "Nothing here..."
+        return nothing
+    elif chance_found == 251:
+        coco_bush2 = random.choice(vantagenspoke.poke146, vantagenspoke.poke059,vantagenspoke.poke065)
+        return coco_bush2
+    elif chance_found > 252:
+        coco_bush2 = random.choice(pok_bush)
+        return coco_bush2
+    else:
+        invalid = "INVALID!!"
+        return invalid
+
+def coco3_bush():
+
+    pok_bush = random.choice([poke_tier3_eletrico,poke_tier3_fogo,poke_tier3_grama,poke_tier3_fantasma,poke_tier3_fada,poke_tier3_lutador,poke_tier3_normal,poke_tier3_pedra,poke_tier3_venenoso,poke_tier3_psiquico,poke_tier3_voador])
+    chance_found = random.randint(1, 1001)
+    if chance_found < 250:
+        nothing = "Nothing here..."
+        return nothing
+    elif chance_found == 251:
+        coco_bush3 = random.choice(vantagenspoke.poke135, vantagenspoke.poke136,vantagenspoke.poke143)
+        return coco_bush3
+    elif chance_found > 252:
+        coco_bush3 = random.choice(pok_bush)
+        return coco_bush3
+    else:
+        invalid = "INVALID!!"
+        return invalid
+
+def coco4_bush():
+
+    pok_bush = random.choice([poke_tier3_eletrico,poke_tier3_fogo,poke_tier3_grama,poke_tier3_fantasma,poke_tier3_fada,poke_tier3_lutador,poke_tier3_normal,poke_tier3_pedra,poke_tier3_venenoso,poke_tier3_psiquico,poke_tier3_voador])
+    chance_found = random.randint(1, 1001)
+    if chance_found < 250:
+        nothing = "Nothing here..."
+        return nothing
+    elif chance_found == 251:
+        coco_bush4 = random.choice(vantagenspoke.poke123, vantagenspoke.poke106,vantagenspoke.poke107)
+        return coco_bush4
+    elif chance_found > 252:
+        coco_bush4 = random.choice(pok_bush)
+        return coco_bush4
+    else:
+        invalid = "INVALID!!"
+        return invalid
+    
+def crush_beach():
+    pok_lake = random.choice([poke_tier3_agua, poke_tier3_voador])
+    chance_found = random.randint(1, 1001)
+    if chance_found <= 250:
+        nothing = "Nothing here..."
+        return nothing
+    elif chance_found == 251:
+        crush_beach1 = random.choice(vantagenspoke.poke130, vantagenspoke.poke131, vantagenspoke.poke144, vantagenspoke.poke117, vantagenspoke.poke091)
+        return crush_beach1
+    elif chance_found > 252:
+        crush_beach1 = random.choice(pok_lake)
+        return crush_beach1
+    else:
+        invalid = "INVALID!!"
+        return invalid
+    
