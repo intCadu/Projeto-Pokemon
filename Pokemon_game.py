@@ -118,11 +118,12 @@ while Game:
 
     partner = True
     while partner:
+        Function.linha()
         print('''CHOSE YOUR PATH!!
 1 -- GO TO LABORATORY 
 2 -- TALK TO MOM
 3 -- GO TO ROOM''')
-
+        Function.linha()
         path_jogador = input("Select 1, 2 or 3:")
         if path_jogador == "1":
             path1 = input("You want go to laboratory?(Y/N)")
@@ -301,10 +302,12 @@ while Game:
     start_journey = True
     while start_journey:
 
+        Function.linha()    
         print('''CHOSE YOUR PATH!!
 1 -- GO TO HOUSE 085
 2 -- TALK WITH MAYOR
 3 -- GO TO ROUTE 222''')
+        Function.linha()
         start_route = input("Chose your path 1, 2 or 3:")
         if start_route == "1":
             x = input("You really want go to house 085?(Y/N)")
@@ -406,12 +409,14 @@ that allows you to capture and store Pokemons inside it''')
                         on_bushes = True
                         while on_bushes:
                             print("-- CHOOSE THE BUSH --")
+                            Function.linha()
                             print('''-- SELECT THE ACTION --
 1 -- BUSH 1
 2 -- BUSH 2
 3 -- BUSH 3
 4 -- BUSH 4
 9 -- TO EXIT THE BUSHES''')
+                            Function.linha()
                             action_bushes = input("Selec your action:")
                             if action_bushes == "1":
                                 print("Entering the bush...")
@@ -420,7 +425,7 @@ that allows you to capture and store Pokemons inside it''')
                                 if found == "Nothing here...":
                                     print(f"{found}")
                                     pass
-                                else: 
+                                elif found!= "Nothing here...": 
                                     print(f"You found {found.name}!")
                                     capture = input(f"Try to cath {found.name}?(Y/N)")
                                     if capture.upper() == "N":
@@ -451,6 +456,10 @@ that allows you to capture and store Pokemons inside it''')
                                             else:
                                                 print("You don't have enough Pokeball...")
                                                 catch = False
+                                else:
+                                    print("Invalid!!")
+                                    input("Press enter...")
+                                    pass
                             elif action_bushes == "2":
                                 print("Entering the bush...")
                                 x = input("Press enter...")
@@ -458,7 +467,7 @@ that allows you to capture and store Pokemons inside it''')
                                 if found == "Nothing here...":
                                     print(f"{found}")
                                     pass
-                                else: 
+                                elif found!= "Nothing here...": 
                                     print(f"You found {found.name}!")
                                     capture = input(f"Try to cath {found.name}?(Y/N)")
                                     if capture.upper() == "N":
@@ -488,7 +497,11 @@ that allows you to capture and store Pokemons inside it''')
                                                         catch = False
                                             else:
                                                 print("You don't have enough Pokeball...")
-                                                catch = False                            
+                                                catch = False
+                                else:
+                                    print("Invalid!!")
+                                    input("Press enter...")
+                                    pass                            
                             elif action_bushes == "3":
                                 print("Entering the bush...")
                                 x = input("Press enter...")
@@ -496,7 +509,7 @@ that allows you to capture and store Pokemons inside it''')
                                 if found == "Nothing here...":
                                     print(f"{found}")
                                     pass
-                                else: 
+                                elif found!= "Nothing here...": 
                                     print(f"You found {found.name}!")
                                     capture = input(f"Try to cath {found.name}?(Y/N)")
                                     if capture.upper() == "N":
@@ -527,6 +540,10 @@ that allows you to capture and store Pokemons inside it''')
                                             else:
                                                 print("You don't have enough Pokeball...")
                                                 catch = False
+                                else:
+                                    print("Invalid!!")
+                                    input("Press enter...")
+                                    pass
                             elif action_bushes == "4":
                                 print("Entering the bush...")
                                 x = input("Press enter...")
@@ -534,7 +551,7 @@ that allows you to capture and store Pokemons inside it''')
                                 if found == "Nothing here...":
                                     print(f"{found}")
                                     pass
-                                else: 
+                                elif found!= "Nothing here...": 
                                     print(f"You found {found.name}!")
                                     capture = input(f"Try to cath {found.name}?(Y/N)")
                                     if capture.upper() == "N":
@@ -565,6 +582,10 @@ that allows you to capture and store Pokemons inside it''')
                                             else:
                                                 print("You don't have enough Pokeball...")
                                                 catch = False
+                                else:
+                                    print("Invalid!!")
+                                    input("Press enter...")
+                                    pass
                             elif action_bushes == "9":
                                 cont_bush = input("You really want exit the bushes?(Y/N)")
                                 if cont_bush.upper() == "N":
@@ -632,12 +653,14 @@ that allows you to capture and store Pokemons inside it''')
     
     lake_journey = True
     while lake_journey:
+        Function.linha()
         print('''-- CHOOSE YOUR PATH!! --
 1 -- UPA
 2 -- GO TO HARBOR
 3 -- NORTH SHOPPING STORE
 4 -- BATTLE ARENA 
 5 -- BLACK GATE''')
+        Function.linha()
         lake_path = input("Select your path 1, 2, 3, 4 or 5:")
         if lake_path == "1":
             print("-- ENTERING UPA --")
@@ -656,19 +679,23 @@ that allows you to capture and store Pokemons inside it''')
                 pc_user = True
                 while pc_user:
                     print("-- POKEMON PC --")
+                    Function.linha()
                     print('''-- SELECT AN ACTION --
 1 -- SEE YOUR POKEMONS
 2 -- CHANGE YOUR TEAM
 3 -- HEAL YOUR POKEMON
 4 -- EXIT PC''')
+                    Function.linha()
                     PC_action = input("Select 1, 2, 3 or 4:")
                     if PC_action == "1":
                         see_team = True
                         while see_team:
+                            Function.linha()
                             print('''-- SELECT --
 1 -- SEE YOUR TEAM
 2 -- SEE YOUR STORED POKEMONS
 3 -- RETURN''')
+                            Function.linha()
                             PC_action2 = input("Select 1, 2 or 3:")
                             if PC_action2 == "1":
                                 contador = 0
@@ -837,11 +864,13 @@ that allows you to capture and store Pokemons inside it''')
                             on_boat = True
                             while on_boat:
                                 print("-- IN THE TABAPUA LAKE --")
+                                Function.linha()
                                 print('''-- CHOOSE --
 1 -- USE THE SUPER ROD IN LEFT SIDE
 2 -- USE THE SUPER ROD IN RIGHT SIDE
 3 -- USE THE SUPER ROD ON THE BOAT'S PROW
 4 -- CAME BAKE TO HARBOR''')
+                                Function.linha()
                                 do_boat = input("Select 1, 2, 3 or 4:")
                                 if do_boat in ("1", "2", "3"):
                                     print("Using Super Rod...")
@@ -1075,10 +1104,12 @@ that allows you to capture and store Pokemons inside it''')
                     buy_store = True
                     while buy_store:
                         print("-- CHOOSE --")
+                        Function.linha()
                         print('''1 -- BUY POKEBALLS
 2 -- BUY SPECIAL ITEMS
 3 -- SELL ITEMS
 9 -- EXIT''')
+                        Function.linha()
                         buy = input("Select 1, 2, 3 or 9:")
                         if buy == "9":
                             leave = input("You really want to leave?(Y/N)")
@@ -1097,12 +1128,14 @@ that allows you to capture and store Pokemons inside it''')
                         elif buy == "1":
                             if "Wallet" in Bag_Items:
                                 buy_pokeball = True
-                                while buy_pokeball:                                   
+                                while buy_pokeball:
+                                    Function.linha()                                   
                                     print('''-- SELECT --
 1 -- POKEBALL......... R$200 
 2 -- GREATBALL........ R$400
 3 -- ULTRABALL........ R$600
 4 -- EXIT''')
+                                    Function.linha()
                                     product = input("Select 1, 2, 3 or 4:")
                                     print(f"You have {Wallet} Cau coins!")
                                     if product == "1":
@@ -1226,11 +1259,12 @@ that allows you to capture and store Pokemons inside it''')
                         elif buy == "2":
                             buy_SuperRod = True
                             while buy_SuperRod:                                    
-                                
+                                Function.linha()
                                 print('''-- SELECT --
 1 -- SUPER ROD........ R$200 
 2 -- POTION........... R$100
 3 -- EXIT''')
+                                Function.linha()
                                 product = input("Select 1, 2 or 3:")
                                 print(f"You have {Wallet} Cau coins!")
                                 if product == "1":
@@ -1329,12 +1363,14 @@ that allows you to capture and store Pokemons inside it''')
                             elif sell.upper() == "Y":
                                 sell_items = True
                                 while sell_items:
+                                    Function.linha()
                                     print('''-- SELLING --
 1 -- POTION........... R$50
 2 -- POKEBALL......... R$100 
 3 -- GREATBALL........ R$200
 4 -- ULTRABALL........ R$300
 9 -- EXIT ''')
+                                    Function.linha()
                                     see_items = input("Want to see your items?(Y/N)")
                                     if see_items.upper() == "N":
                                         print("Oskey?!")
@@ -2098,23 +2134,27 @@ that allows you to capture and store Pokemons inside it''')
     fortal_journey = True
     while fortal_journey:
         print("-- IN FORTAL CITY --")
+        Function.linha()
         print('''-- CHOOSE YOUR PATH --
 1 -- BUSHES OF COCÓ
 2 -- RIO MAR SHOPPING
 3 -- UPA
 4 -- FORTAL GYM
 5 -- CRUSH'S BEACH ''')
+        Function.linha()
         fortal_path = input("Select path 1, 2, 3, 4 or 5:")
         if fortal_path == "1":
             on_beach = True
             while on_beach:
                 print("-- IN THE TABAPUA LAKE --")
+                Function.linha()
                 print('''-- CHOOSE --
 1 -- COCÓ'S BUSH
 2 -- COCÓ'S BUSH
 3 -- COCÓ'S BUSH
 4 -- COCÓ'S BUSH
 9 -- EXIT''')
+                Function.linha()
                 do_bush = input("Select 1, 2, 3, 4 or 9:")
                 if do_bush in ("1", "2", "3", "4"):
                     print("Using Super Rod...")
@@ -2319,10 +2359,12 @@ that allows you to capture and store Pokemons inside it''')
                     buy_store = True
                     while buy_store:
                         print("-- CHOOSE --")
+                        Function.linha()
                         print('''1 -- BUY POKEBALLS
 2 -- BUY SPECIAL ITEMS
 3 -- SELL ITEMS
 9 -- EXIT''')
+                        Function.linha()
                         buy = input("Select 1, 2, 3 or 9:")
                         if buy == "9":
                             leave = input("You really want to leave?(Y/N)")
@@ -2341,12 +2383,14 @@ that allows you to capture and store Pokemons inside it''')
                         elif buy == "1":
                             if "Wallet" in Bag_Items:
                                 buy_pokeball = True
-                                while buy_pokeball:                                   
+                                while buy_pokeball:
+                                    Function.linha()                                   
                                     print('''-- SELECT --
 1 -- POKEBALL......... R$200 
 2 -- GREATBALL........ R$400
 3 -- ULTRABALL........ R$600
 4 -- EXIT''')
+                                    Function.linha()
                                     product = input("Select 1, 2, 3 or 4:")
                                     print(f"You have {Wallet} Cau coins!")
                                     if product == "1":
@@ -2469,11 +2513,13 @@ that allows you to capture and store Pokemons inside it''')
                                         pass
                         elif buy == "2":
                             buy_SuperRod = True
-                            while buy_SuperRod:                                    
+                            while buy_SuperRod:
+                                Function.linha()                                    
                                 print('''-- SELECT --
 1 -- SUPER ROD........ R$200 
 2 -- POTION........... R$100
 3 -- EXIT''')
+                                Function.linha()
                                 product = input("Select 1, 2 or 3:")
                                 print(f"You have {Wallet} Cau coins!")
                                 if product == "1":
@@ -2572,12 +2618,14 @@ that allows you to capture and store Pokemons inside it''')
                             elif sell.upper() == "Y":
                                 sell_items = True
                                 while sell_items:
+                                    Function.linha()
                                     print('''-- SELLING --
 1 -- POTION........... R$50
 2 -- POKEBALL......... R$100 
 3 -- GREATBALL........ R$200
 4 -- ULTRABALL........ R$300
 9 -- EXIT ''')
+                                    Function.linha()
                                     see_items = input("Want to see your items?(Y/N)")
                                     if see_items.upper() == "N":
                                         print("Oskey?!")
@@ -2795,19 +2843,23 @@ that allows you to capture and store Pokemons inside it''')
                 pc_user = True
                 while pc_user:
                     print("-- POKEMON PC --")
+                    Function.linha()
                     print('''-- SELECT AN ACTION --
 1 -- SEE YOUR POKEMONS
 2 -- CHANGE YOUR TEAM
 3 -- HEAL YOUR POKEMON
 4 -- EXIT PC''')
+                    Function.linha()
                     PC_action = input("Select 1, 2 or 3:")
                     if PC_action == "1":
                         see_team = True
                         while see_team:
+                            Function.linha()
                             print('''-- SELECT --
 1 -- SEE YOUR TEAM
 2 -- SEE YOUR STORED POKEMONS
 3 -- RETURN''')
+                            Function.linha()
                             PC_action2 = input("Select 1, 2 or 3:")
                             if PC_action2 == "1":
                                 contador = 0
@@ -2932,12 +2984,14 @@ that allows you to capture and store Pokemons inside it''')
                 elif len(Bag_Pok) > 0:
                     print("-- IN FORTAL GYM --")
                     x = input("Press enter...")
+                    Function.linha()
                     gym_select = input('''-- CHOOSE GYM PATH --
-            1 -- CAPTAIN WAGNER
-            2 -- JOSEPH SARTO
-            3 -- EMANUEL DE FRENTES
-            4 -- EMANUEL DE COSTAS
-            5 -- BLACK ROOM''')
+1 -- CAPTAIN WAGNER
+2 -- JOSEPH SARTO
+3 -- EMANUEL DE FRENTES
+4 -- EMANUEL DE COSTAS
+5 -- BLACK ROOM''')
+                    Function.linha()
                     do_gym = input("Select 1, 2, 3, 4 or 5:(Press 0 to leave)")
                     if do_gym == "1":
                         if "First battle" not in Bag_badges:
@@ -3366,11 +3420,13 @@ that allows you to capture and store Pokemons inside it''')
                 on_beach = True
                 while on_beach:
                     print("-- IN THE TABAPUA LAKE --")
+                    Function.linha()
                     print('''-- CHOOSE --
 1 -- CRUSH'S BEACH
 2 -- CRUSH'S BEACH
 3 -- CRUSH'S BEACH
 4 -- EXIT''')
+                    Function.linha()
                     do_boat = input("Select 1, 2, 3 or 4:")
                     if do_boat in ("1", "2", "3"):
                         print("Using Super Rod...")

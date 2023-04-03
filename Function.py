@@ -237,3 +237,6 @@ def crush_beach():
         invalid = "INVALID!!"
         return invalid
     
+
+def linha():
+    print("----"*10)
