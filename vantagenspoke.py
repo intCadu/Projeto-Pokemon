@@ -89,7 +89,8 @@ class Pokemon:
                     return "Win"
                     
     def get_name_pok(self):
-        return f"{self.name} -- {self.elemento}" 
+        name = print(f"{self.name} -- {self.elemento}") 
+        return name
     
 class PokeNormal(Pokemon):
     def __init__(self, name, tier, elemento, Hp, Atk, Def, Speed):

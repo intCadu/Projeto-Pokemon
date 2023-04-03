@@ -10,7 +10,7 @@ class Player:
         
     
     def get_information(self):
-        return (f"NAME: {nome_jogador},AGE: {idade_jogador}, GENDER: {jogador}")
+        return (f"NAME: {nome_jogador}, AGE: {idade_jogador}, GENDER: {jogador}")
     
     def set_name(self, new_name):
         self.name = new_name
@@ -417,11 +417,12 @@ that allows you to capture and store Pokemons inside it''')
                                 print("Entering the bush...")
                                 x = input("Press enter...")
                                 found = (Function.found_bush())
-                                if found == "Nothing here":
+                                if found == "Nothing here...":
+                                    print(f"{found}")
                                     pass
                                 else: 
-                                    print(f"You found {found.get_name_pok()}!")
-                                    capture = input(f"Try to cath {found.get_name_pok()}?(Y/N)")
+                                    print(f"You found {found.name}!")
+                                    capture = input(f"Try to cath {found.name}?(Y/N)")
                                     if capture.upper() == "N":
                                         pass
                                     elif capture.upper() == "Y":
@@ -443,7 +444,7 @@ that allows you to capture and store Pokemons inside it''')
                                                         Bag_Items.remove("Pokeball")
                                                         pass
                                                     elif chance_catch > 45:
-                                                        print(f"Gotcha!! The {found.get_name_pok()} was added on your list.")
+                                                        print(f"Gotcha!! The {found.name} was added on your list.")
                                                         Bag_Pok.append(found)
                                                         Bag_Items.remove("Pokeball")
                                                         catch = False
@@ -454,11 +455,12 @@ that allows you to capture and store Pokemons inside it''')
                                 print("Entering the bush...")
                                 x = input("Press enter...")
                                 found = (Function.found_bush())
-                                if found == "Nothing here":
+                                if found == "Nothing here...":
+                                    print(f"{found}")
                                     pass
                                 else: 
-                                    print(f"You found {found.get_name_pok()}!")
-                                    capture = input(f"Try to cath {found.get_name_pok()}?(Y/N)")
+                                    print(f"You found {found.name}!")
+                                    capture = input(f"Try to cath {found.name}?(Y/N)")
                                     if capture.upper() == "N":
                                         pass
                                     elif capture.upper() == "Y":
@@ -480,7 +482,7 @@ that allows you to capture and store Pokemons inside it''')
                                                         Bag_Items.remove("Pokeball")
                                                         pass
                                                     elif chance_catch > 45:
-                                                        print(f"Gotcha!! The {found.get_name_pok()} was added on your list.")
+                                                        print(f"Gotcha!! The {found.name} was added on your list.")
                                                         Bag_Pok.append(found)
                                                         Bag_Items.remove("Pokeball")
                                                         catch = False
@@ -491,11 +493,12 @@ that allows you to capture and store Pokemons inside it''')
                                 print("Entering the bush...")
                                 x = input("Press enter...")
                                 found = (Function.found_bush())
-                                if found == "Nothing here":
+                                if found == "Nothing here...":
+                                    print(f"{found}")
                                     pass
                                 else: 
-                                    print(f"You found {found.get_name_pok()}!")
-                                    capture = input(f"Try to cath {found.get_name_pok()}?(Y/N)")
+                                    print(f"You found {found.name}!")
+                                    capture = input(f"Try to cath {found.name}?(Y/N)")
                                     if capture.upper() == "N":
                                         pass
                                     elif capture.upper() == "Y":
@@ -517,7 +520,7 @@ that allows you to capture and store Pokemons inside it''')
                                                         Bag_Items.remove("Pokeball")
                                                         pass
                                                     elif chance_catch > 45:
-                                                        print(f"Gotcha!! The {found.get_name_pok()} was added on your list.")
+                                                        print(f"Gotcha!! The {found.name} was added on your list.")
                                                         Bag_Pok.append(found)
                                                         Bag_Items.remove("Pokeball")
                                                         catch = False
@@ -528,11 +531,12 @@ that allows you to capture and store Pokemons inside it''')
                                 print("Entering the bush...")
                                 x = input("Press enter...")
                                 found = (Function.found_bush())
-                                if found == "Nothing here":
+                                if found == "Nothing here...":
+                                    print(f"{found}")
                                     pass
                                 else: 
-                                    print(f"You found {found.get_name_pok()}!")
-                                    capture = input(f"Try to cath {found.get_name_pok()}?(Y/N)")
+                                    print(f"You found {found.name}!")
+                                    capture = input(f"Try to cath {found.name}?(Y/N)")
                                     if capture.upper() == "N":
                                         pass
                                     elif capture.upper() == "Y":
@@ -554,7 +558,7 @@ that allows you to capture and store Pokemons inside it''')
                                                         Bag_Items.remove("Pokeball")
                                                         pass
                                                     elif chance_catch > 45:
-                                                        print(f"Gotcha!! The {found.get_name_pok()} was added on your list.")
+                                                        print(f"Gotcha!! The {found.name} was added on your list.")
                                                         Bag_Pok.append(found)
                                                         Bag_Items.remove("Pokeball")
                                                         catch = False
@@ -635,7 +639,7 @@ that allows you to capture and store Pokemons inside it''')
 4 -- BATTLE ARENA 
 5 -- BLACK GATE''')
         lake_path = input("Select your path 1, 2, 3, 4 or 5:")
-        if lake_path.upper() == "1":
+        if lake_path == "1":
             print("-- ENTERING UPA --")
             x = input("Press enter...")
             print("NURSE JOY: Hello young trainer, here in pokestop you can access your PC...")
@@ -670,14 +674,14 @@ that allows you to capture and store Pokemons inside it''')
                                 contador = 0
                                 for i in Bag_Pok:
                                     contador += 1
-                                    print(i.get_name_pok())
+                                    print(i.name)
                                 x = input("Press enter...")
                                 pass
                             elif PC_action2 == "2":
                                 contador = 0
                                 for i in Bag_Pok:
                                     contador += 1
-                                    print(i.get_name_pok())
+                                    print(i.name)
                                 x = input("Press enter...")
                                 pass
                             elif PC_action2 == "3":
@@ -777,7 +781,7 @@ that allows you to capture and store Pokemons inside it''')
                 x = input("Press enter...")
                 pass
         
-        elif lake_path.upper() == "2":
+        elif lake_path == "2":
             if "Super Rod" in Bag_Items:
                 print("-- IN HARBOR --")
                 print("YOU: So this is the Tabapua Harbor!")
@@ -834,17 +838,17 @@ that allows you to capture and store Pokemons inside it''')
                             while on_boat:
                                 print("-- IN THE TABAPUA LAKE --")
                                 print('''-- CHOOSE --
-                            1 -- USE THE SUPER ROD IN LEFT SIDE
-                            2 -- USE THE SUPER ROD IN RIGHT SIDE
-                            3 -- USE THE SUPER ROD ON THE BOAT'S PROW
-                            4 -- CAME BAKE TO HARBOR''')
+1 -- USE THE SUPER ROD IN LEFT SIDE
+2 -- USE THE SUPER ROD IN RIGHT SIDE
+3 -- USE THE SUPER ROD ON THE BOAT'S PROW
+4 -- CAME BAKE TO HARBOR''')
                                 do_boat = input("Select 1, 2, 3 or 4:")
                                 if do_boat in ("1", "2", "3"):
                                     print("Using Super Rod...")
                                     x = input("Press enter...")
                                     find = (Function.found_lake())
                                     if find != "Nothing here...":
-                                        ask_catch = input(f"Try catch {find.get_name_pok()}?(Y/N)")
+                                        ask_catch = input(f"Try catch {find.name}?(Y/N)")
                                         if ask_catch.upper() == "N":
                                             print("Oskey?!")
                                             x = input("Press enter...")
@@ -878,11 +882,11 @@ that allows you to capture and store Pokemons inside it''')
                                                             pass
                                                         elif chance_catch <= 45:
                                                             if len(Bag_Pok) >= 6:
-                                                                print(f"Gotcha! {find.get_name_pok()} was captured and added on your Pc!")
+                                                                print(f"Gotcha! {find.name} was captured and added on your Pc!")
                                                                 Bag_pc.append(find)
                                                                 trhow_ball = False
                                                             elif len(Bag_Pok) <= 6:
-                                                                print(f"Gotcha! {find.get_name_pok()} was captured and added on your team!")
+                                                                print(f"Gotcha! {find.name} was captured and added on your team!")
                                                                 Bag_Pok.append(find)
                                                                 trhow_ball = False
                                                             else:
@@ -913,11 +917,11 @@ that allows you to capture and store Pokemons inside it''')
                                                             pass
                                                         elif chance_catch <= 60:
                                                             if len(Bag_Pok) >= 6:
-                                                                print(f"Gotcha! {find.get_name_pok()} was captured and added on your Pc!")
+                                                                print(f"Gotcha! {find.name} was captured and added on your Pc!")
                                                                 Bag_pc.append(find)
                                                                 trhow_ball = False
                                                             elif len(Bag_Pok) <= 6:
-                                                                print(f"Gotcha! {find.get_name_pok()} was captured and added on your team!")
+                                                                print(f"Gotcha! {find.name} was captured and added on your team!")
                                                                 Bag_Pok.append(find)
                                                                 trhow_ball = False
                                                             else:
@@ -947,11 +951,11 @@ that allows you to capture and store Pokemons inside it''')
                                                         pass
                                                     elif chance_catch <= 80:
                                                         if len(Bag_Pok) >= 6:
-                                                            print(f"Gotcha! {find.get_name_pok()} was captured and added on your Pc!")
+                                                            print(f"Gotcha! {find.name} was captured and added on your Pc!")
                                                             Bag_pc.append(find)
                                                             trhow_ball = False
                                                         elif len(Bag_Pok) <= 6:
-                                                            print(f"Gotcha! {find.get_name_pok()} was captured and added on your team!")
+                                                            print(f"Gotcha! {find.name} was captured and added on your team!")
                                                             Bag_Pok.append(find)
                                                             trhow_ball = False
                                                         else:
@@ -1049,7 +1053,7 @@ that allows you to capture and store Pokemons inside it''')
                 x = input("Press enter...")
                 pass
         
-        elif lake_path.upper() == "3":
+        elif lake_path == "3":
             store = input("Do you really want to go into the store?(Y/N)")
             if store.upper() == "N":
                 print("Oskey?!")
@@ -1233,8 +1237,8 @@ that allows you to capture and store Pokemons inside it''')
                                     if "Super Rod" not in Bag_Items:
                                         buy_rod = input("Want to buy Super Rod?(Y/N)")
                                         if buy_rod.upper() == "Y":
-                                            print(f"The price for Super Rod is R$400!")
-                                            total = (Wallet - 400)
+                                            print(f"The price for Super Rod is R$200!")
+                                            total = (Wallet - 200)
                                             if total < 0:
                                                 print("You don't have Cau coins enough!")
                                                 x = input("Press enter...")
@@ -1531,7 +1535,7 @@ that allows you to capture and store Pokemons inside it''')
                 x = input("Press enter...")
                 pass
                 
-        elif lake_path.upper() == "4":
+        elif lake_path == "4":
             print("-- IN BATTLE ARENA --")
             x = input("Press enter...")
             if "Battle Ticket" in Bag_Items:
@@ -1574,7 +1578,7 @@ that allows you to capture and store Pokemons inside it''')
                                 contador_team = 0
                                 for i in Bag_Pok:
                                     contador_team += 1
-                                    print(f"{contador_team} -- {i.get_name_pok()}")
+                                    print(f"{contador_team} -- {i.name} -- {i.elemento}")
                                 select_fighter = input(f"Select one in {len(Bag_Pok)} Pokemons:")
                                 if select_fighter.isnumeric():
                                     if int(select_fighter) in range(1, len(Bag_Pok) + 1):
@@ -1656,7 +1660,7 @@ that allows you to capture and store Pokemons inside it''')
                                         contador_fight = 0
                                         for i in Bag_Pok:
                                             contador_fight += 1
-                                            print(f"{contador_fight} -- {i.get_name_pok()}")
+                                            print(f"{contador_fight} -- {i.name} -- {i.elemento}")
                                         select_fighter = input(f"Select one in {len(Bag_Pok)} Pokemons:")
                                         if select_fighter.isnumeric():
                                             if int(select_fighter) in range(1, len(Bag_Pok) + 1):
@@ -1719,7 +1723,7 @@ that allows you to capture and store Pokemons inside it''')
                                         contador_fight2 = 0
                                         for i in Bag_Pok:
                                             contador_fight2 += 1
-                                            print(f"{contador_fight2} -- {i.get_name_pok()}")
+                                            print(f"{contador_fight2} -- {i.name} -- {i.elemento}")
                                         select_fighter = input(f"Select one in {len(Bag_Pok)} Pokemons:")
                                         if select_fighter.isnumeric():
                                             if int(select_fighter) in range(1, len(Bag_Pok) + 1):
@@ -1782,7 +1786,7 @@ that allows you to capture and store Pokemons inside it''')
                                         contador_fight3 = 0
                                         for i in Bag_Pok:
                                             contador_fight3 += 1
-                                            print(f"{contador_fight3} -- {i.get_name_pok()}")
+                                            print(f"{contador_fight3} -- {i.name} -- {i.elemento}")
                                         select_fighter = input(f"Select one in {len(Bag_Pok)} Pokemons:")
                                         if select_fighter.isnumeric():
                                             if int(select_fighter) in range(1, len(Bag_Pok) + 1):
@@ -1845,7 +1849,7 @@ that allows you to capture and store Pokemons inside it''')
                                         contador_fight4 = 0
                                         for i in Bag_Pok:
                                             contador_fight4 += 1
-                                            print(f"{contador_fight4} -- {i.get_name_pok()}")
+                                            print(f"{contador_fight4} -- {i.name} -- {i.elemento}")
                                         select_fighter = input(f"Select one in {len(Bag_Pok)} Pokemons:")
                                         if select_fighter.isnumeric:
                                             if int(select_fighter) in range(1, len(Bag_Pok) + 1):
@@ -1908,7 +1912,7 @@ that allows you to capture and store Pokemons inside it''')
                                         contador_fight5 = 0
                                         for i in Bag_Pok:
                                             contador_fight5 += 1
-                                            print(f"{contador_fight5} -- {i.get_name_pok()}")
+                                            print(f"{contador_fight5} -- {i.name} -- {i.elemento}")
                                         select_fighter = input(f"Select one in {len(Bag_Pok)} Pokemons:")
                                         if select_fighter.isnumeric():
                                             if int(select_fighter) in range(1, len(Bag_Pok) + 1):
@@ -1971,7 +1975,7 @@ that allows you to capture and store Pokemons inside it''')
                                         contador_fight6 = 0
                                         for i in Bag_Pok:
                                             contador_fight6 += 1
-                                            print(f"{contador_fight6} -- {i.get_name_pok()}")
+                                            print(f"{contador_fight6} -- {i.name} -- {i.elemento}")
                                         select_fighter = input(f"Select one in {len(Bag_Pok)} Pokemons:")
                                         if select_fighter.isnumeric():
                                             if int(select_fighter) in range(1, len(Bag_Pok) + 1):
@@ -2034,7 +2038,7 @@ that allows you to capture and store Pokemons inside it''')
                 x = input("Press enter...")
                 pass  
             
-        elif lake_path.upper() == "5":
+        elif lake_path == "5":
             if "Black Key" not in Bag_Items:
                 print("YOU: What a giant gate...")
                 x = input("Press enter...")
@@ -2106,18 +2110,18 @@ that allows you to capture and store Pokemons inside it''')
             while on_beach:
                 print("-- IN THE TABAPUA LAKE --")
                 print('''-- CHOOSE --
-            1 -- COCÓ'S BUSH
-            2 -- COCÓ'S BUSH
-            3 -- COCÓ'S BUSH
-            4 -- COCÓ'S BUSH
-            9 -- EXIT''')
+1 -- COCÓ'S BUSH
+2 -- COCÓ'S BUSH
+3 -- COCÓ'S BUSH
+4 -- COCÓ'S BUSH
+9 -- EXIT''')
                 do_bush = input("Select 1, 2, 3, 4 or 9:")
                 if do_bush in ("1", "2", "3", "4"):
                     print("Using Super Rod...")
                     x = input("Press enter...")
                     find = (Function.coco1_bush())
                     if find != "Nothing here...":
-                        ask_catch = input(f"Try catch {find.get_name_pok()}?(Y/N)")
+                        ask_catch = input(f"Try catch {find.name}?(Y/N)")
                         if ask_catch.upper() == "N":
                             print("Oskey?!")
                             x = input("Press enter...")
@@ -2155,11 +2159,11 @@ that allows you to capture and store Pokemons inside it''')
                                             pass
                                         elif chance_catch <= 45:
                                             if len(Bag_Pok) >= 6:
-                                                print(f"Gotcha! {find.get_name_pok()} was captured and added on your Pc!")
+                                                print(f"Gotcha! {find.name} was captured and added on your Pc!")
                                                 Bag_pc.append(find)
                                                 trhow_ball2 = False
                                             elif len(Bag_Pok) <= 6:
-                                                print(f"Gotcha! {find.get_name_pok()} was captured and added on your team!")
+                                                print(f"Gotcha! {find.name} was captured and added on your team!")
                                                 Bag_Pok.append(find)
                                                 trhow_ball2 = False
                                             else:
@@ -2190,11 +2194,11 @@ that allows you to capture and store Pokemons inside it''')
                                             pass
                                         elif chance_catch <= 60:
                                             if len(Bag_Pok) >= 6:
-                                                print(f"Gotcha! {find.get_name_pok()} was captured and added on your Pc!")
+                                                print(f"Gotcha! {find.name} was captured and added on your Pc!")
                                                 Bag_pc.append(find)
                                                 trhow_ball2 = False
                                             elif len(Bag_Pok) <= 6:
-                                                print(f"Gotcha! {find.get_name_pok()} was captured and added on your team!")
+                                                print(f"Gotcha! {find.name} was captured and added on your team!")
                                                 Bag_Pok.append(find)
                                                 trhow_ball2 = False
                                             else:
@@ -2224,11 +2228,11 @@ that allows you to capture and store Pokemons inside it''')
                                         pass
                                     elif chance_catch <= 80:
                                         if len(Bag_Pok) >= 6:
-                                            print(f"Gotcha! {find.get_name_pok()} was captured and added on your Pc!")
+                                            print(f"Gotcha! {find.name} was captured and added on your Pc!")
                                             Bag_pc.append(find)
                                             trhow_ball2 = False
                                         elif len(Bag_Pok) <= 6:
-                                            print(f"Gotcha! {find.get_name_pok()} was captured and added on your team!")
+                                            print(f"Gotcha! {find.name} was captured and added on your team!")
                                             Bag_Pok.append(find)
                                             trhow_ball2 = False
                                         else:
@@ -2241,11 +2245,11 @@ that allows you to capture and store Pokemons inside it''')
                                         pass
                                 elif wich_ball.upper() == "MASTERBALL":
                                     if len(Bag_Pok) >= 6:
-                                            print(f"Gotcha! {find.get_name_pok()} was captured and added on your Pc!")
+                                            print(f"Gotcha! {find.name} was captured and added on your Pc!")
                                             Bag_pc.append(find)
                                             trhow_ball2 = False
                                     elif len(Bag_Pok) <= 6:
-                                        print(f"Gotcha! {find.get_name_pok()} was captured and added on your team!")
+                                        print(f"Gotcha! {find.name} was captured and added on your team!")
                                         Bag_Pok.append(find)
                                         trhow_ball2 = False
                                     else:
@@ -2476,8 +2480,8 @@ that allows you to capture and store Pokemons inside it''')
                                     if "Super Rod" not in Bag_Items:
                                         buy_rod = input("Want to buy Super Rod?(Y/N)")
                                         if buy_rod.upper() == "Y":
-                                            print(f"The price for Super Rod is R$400!")
-                                            total = (Wallet - 400)
+                                            print(f"The price for Super Rod is R$200!")
+                                            total = (Wallet - 200)
                                             if total < 0:
                                                 print("You don't have Cau coins enough!")
                                                 x = input("Press enter...")
@@ -2806,11 +2810,17 @@ that allows you to capture and store Pokemons inside it''')
 3 -- RETURN''')
                             PC_action2 = input("Select 1, 2 or 3:")
                             if PC_action2 == "1":
-                                print(Bag_Pok)
+                                contador = 0
+                                for i in Bag_Pok:
+                                    contador += 1
+                                    print(f"{contador}--{i.name}")
                                 x = input("Press enter...")
                                 pass
                             elif PC_action2 == "2":
-                                print(Bag_pc)
+                                contador = 0
+                                for i in Bag_pc:
+                                    contador += 1
+                                    print(f"{contador}--{i.name}")
                                 x = input("Press enter...")
                                 pass
                             elif PC_action2 == "3":
@@ -2936,7 +2946,7 @@ that allows you to capture and store Pokemons inside it''')
                                 contador_team = 0
                                 for i in Bag_Pok:
                                     contador_team += 1
-                                    print(f"{contador_team} -- {i.get_name_pok()}")
+                                    print(f"{contador_team} -- {i.name} -- {i.elemento}")
                                 select_fighter = input(f"Select one in {len(Bag_Pok)} Pokemons:")
                                 if select_fighter.isnumeric():
                                     if int(select_fighter) in range(1, len(Bag_Pok) + 1):
@@ -2999,7 +3009,7 @@ that allows you to capture and store Pokemons inside it''')
                                 contador_team = 0
                                 for i in Bag_Pok:
                                     contador_team += 1
-                                    print(f"{contador_team} -- {i.get_name_pok()}")
+                                    print(f"{contador_team} -- {i.name} -- {i.elemento}")
                                 select_fighter = input(f"Select one in {len(Bag_Pok)} Pokemons:")
                                 if select_fighter.isnumeric():
                                     if int(select_fighter) in range(1, len(Bag_Pok) + 1):
@@ -3062,7 +3072,7 @@ that allows you to capture and store Pokemons inside it''')
                                 contador_team = 0
                                 for i in Bag_Pok:
                                     contador_team += 1
-                                    print(f"{contador_team} -- {i.get_name_pok()}")
+                                    print(f"{contador_team} -- {i.name} -- {i.elemento}")
                                 select_fighter = input(f"Select one in {len(Bag_Pok)} Pokemons:")
                                 if select_fighter.isnumeric():
                                     if int(select_fighter) in range(1, len(Bag_Pok) + 1):
@@ -3125,7 +3135,7 @@ that allows you to capture and store Pokemons inside it''')
                                 contador_team = 0
                                 for i in Bag_Pok:
                                     contador_team += 1
-                                    print(f"{contador_team} -- {i.get_name_pok()}")
+                                    print(f"{contador_team} -- {i.name} -- {i.elemento}")
                                 select_fighter = input(f"Select one in {len(Bag_Pok)} Pokemons:")
                                 if select_fighter.isnumeric():
                                     if int(select_fighter) in range(1, len(Bag_Pok) + 1):
@@ -3203,7 +3213,7 @@ that allows you to capture and store Pokemons inside it''')
                                     contador_team = 0
                                     for i in Bag_Pok:
                                         contador_team += 1
-                                        print(f"{contador_team} -- {i.get_name_pok()}")
+                                        print(f"{contador_team} -- {i.name} -- {i.elemento}")
                                     select_fighter = input(f"Select one in {len(Bag_Pok)} Pokemons:")
                                     if select_fighter.isnumeric():
                                         if int(select_fighter) in range(1, len(Bag_Pok) + 1):
@@ -3367,7 +3377,7 @@ that allows you to capture and store Pokemons inside it''')
                         x = input("Press enter...")
                         find = (Function.crush_beach())
                         if find != "Nothing here...":
-                            ask_catch = input(f"Try catch {find.get_name_pok()}?(Y/N)")
+                            ask_catch = input(f"Try catch {find.name}?(Y/N)")
                             if ask_catch.upper() == "N":
                                 print("Oskey?!")
                                 x = input("Press enter...")
@@ -3405,11 +3415,11 @@ that allows you to capture and store Pokemons inside it''')
                                                 pass
                                             elif chance_catch <= 45:
                                                 if len(Bag_Pok) >= 6:
-                                                    print(f"Gotcha! {find} was captured and added on your Pc!")
+                                                    print(f"Gotcha! {find.name} was captured and added on your Pc!")
                                                     Bag_pc.append(find)
                                                     trhow_ball2 = False
                                                 elif len(Bag_Pok) <= 6:
-                                                    print(f"Gotcha! {find} was captured and added on your team!")
+                                                    print(f"Gotcha! {find.name} was captured and added on your team!")
                                                     Bag_Pok.append(find)
                                                     trhow_ball2 = False
                                                 else:
@@ -3440,11 +3450,11 @@ that allows you to capture and store Pokemons inside it''')
                                                 pass
                                             elif chance_catch <= 60:
                                                 if len(Bag_Pok) >= 6:
-                                                    print(f"Gotcha! {find} was captured and added on your Pc!")
+                                                    print(f"Gotcha! {find.name} was captured and added on your Pc!")
                                                     Bag_pc.append(find)
                                                     trhow_ball2 = False
                                                 elif len(Bag_Pok) <= 6:
-                                                    print(f"Gotcha! {find} was captured and added on your team!")
+                                                    print(f"Gotcha! {find.name} was captured and added on your team!")
                                                     Bag_Pok.append(find)
                                                     trhow_ball2 = False
                                                 else:
@@ -3474,11 +3484,11 @@ that allows you to capture and store Pokemons inside it''')
                                             pass
                                         elif chance_catch <= 80:
                                             if len(Bag_Pok) >= 6:
-                                                print(f"Gotcha! {find} was captured and added on your Pc!")
+                                                print(f"Gotcha! {find.name} was captured and added on your Pc!")
                                                 Bag_pc.append(find)
                                                 trhow_ball2 = False
                                             elif len(Bag_Pok) <= 6:
-                                                print(f"Gotcha! {find} was captured and added on your team!")
+                                                print(f"Gotcha! {find.name} was captured and added on your team!")
                                                 Bag_Pok.append(find)
                                                 trhow_ball2 = False
                                             else:
@@ -3491,11 +3501,11 @@ that allows you to capture and store Pokemons inside it''')
                                             pass
                                     elif wich_ball.upper() == "MASTERBALL":
                                         if len(Bag_Pok) >= 6:
-                                                print(f"Gotcha! {find} was captured and added on your Pc!")
+                                                print(f"Gotcha! {find.name} was captured and added on your Pc!")
                                                 Bag_pc.append(find)
                                                 trhow_ball2 = False
                                         elif len(Bag_Pok) <= 6:
-                                            print(f"Gotcha! {find} was captured and added on your team!")
+                                            print(f"Gotcha! {find.name} was captured and added on your team!")
                                             Bag_Pok.append(find)
                                             trhow_ball2 = False
                                         else:

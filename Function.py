@@ -192,7 +192,7 @@ def found_lake():
 
 def found_bush():
 
-    pok_bush = random.choice([poke_tier1_eletrico,poke_tier1_fogo,poke_tier1_grama,poke_tier1_fantasma,poke_tier1_fada,poke_tier1_lutador,poke_tier1_normal,poke_tier1_pedra,poke_tier1_venenoso,poke_tier1_psiquico,poke_tier1_voador])
+    pok_bush = random.choice([poke_tier2_eletrico,poke_tier2_fogo,poke_tier2_grama,poke_tier2_fantasma,poke_tier2_fada,poke_tier2_lutador,poke_tier2_normal,poke_tier2_pedra,poke_tier2_venenoso,poke_tier2_psiquico,poke_tier2_voador])
     chance_found = random.randint(1, 101)
     if chance_found <= 25:
         nothing = "Nothing here..."
