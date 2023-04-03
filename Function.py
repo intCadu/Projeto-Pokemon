@@ -178,7 +178,7 @@ def change_team(pokemon1, pokemon2):
         Bag_pc.remove(pokemon2) and Bag_Pok.append(pokemon2)
 
 def found_lake():
-    pok_lake = random.choice([poke_tier1_agua, poke_tier1_voador])
+    pok_lake = random.choice([poke_tier2_agua, poke_tier2_voador])
     chance_found = random.randint(1, 101)
     if chance_found <= 25:
         nothing = "Nothing here..."
