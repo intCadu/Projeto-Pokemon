@@ -756,7 +756,7 @@ that allows you to capture and store Pokemons inside it''')
                             for i in Bag_fainted:
                                 Bag_Pok.append(i)
                                 contador_team += 1
-                                print(f"{contador_team} -- {i.get_name_pok()} Is Healed!")
+                                print(f"{contador_team} -- {i.name} Is Healed!")
                             x = input("Press enter...")
                             pass
                         else:
@@ -2895,7 +2895,7 @@ that allows you to capture and store Pokemons inside it''')
                             for i in Bag_fainted:
                                 Bag_Pok.append(i)
                                 contador_team += 1
-                                print(f"{contador_team} -- {i.get_name_pok()} Is Healed!")
+                                print(f"{contador_team} -- {i.name} Is Healed!")
                             x = input("Press enter...")
                             pass
                         else:
