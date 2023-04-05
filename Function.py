@@ -193,17 +193,20 @@ def found_lake():
 def found_bush():
 
     pok_bush = random.choice([poke_tier2_eletrico,poke_tier2_fogo,poke_tier2_grama,poke_tier2_fantasma,poke_tier2_fada,poke_tier2_lutador,poke_tier2_normal,poke_tier2_pedra,poke_tier2_venenoso,poke_tier2_psiquico,poke_tier2_voador])
-    chance_found = random.randint(1, 101)
-    if chance_found <= 25:
+    if pok_bush != []:
+        chance_found = random.randint(1, 101)
+        if chance_found <= 25:
+            nothing = "Nothing here..."
+            return nothing
+        elif chance_found > 25:
+            found_bush1 = random.choice(pok_bush)
+            return found_bush1
+        else:
+            invalid = "INVALID!!"
+            return invalid
+    elif pok_bush == []:
         nothing = "Nothing here..."
         return nothing
-    elif chance_found > 25:
-        found_bush1 = random.choice(pok_bush)
-        return found_bush1
-    else:
-        invalid = "INVALID!!"
-        return invalid
-
 def coco1_bush():
 
     pok_bush = random.choice([poke_tier3_eletrico,poke_tier3_fogo,poke_tier3_grama,poke_tier3_fantasma,poke_tier3_fada,poke_tier3_lutador,poke_tier3_normal,poke_tier3_pedra,poke_tier3_venenoso,poke_tier3_psiquico,poke_tier3_voador])
